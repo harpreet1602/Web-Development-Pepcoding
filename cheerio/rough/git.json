@@ -1,0 +1,904 @@
+[
+    {
+        "projectName": "Ruby",
+        "ProjectUrl": "https://github.com/topics/ruby",
+        "repo": [
+            {
+                "repoName": "rails",
+                "repoUrl": "https://github.com/rails/rails",
+                "issues": [
+                    {
+                        "IssueName": "ActiveStorage attachment not saved to disk when adding attachments to a new record inside a transaction",
+                        "IssueUrl": "https://github.com/rails/rails/issues/41903"
+                    },
+                    {
+                        "IssueName": "ActiveRecord::Base.filter_attributes doesn't filter SQL logs",
+                        "IssueUrl": "https://github.com/rails/rails/issues/41896"
+                    },
+                    {
+                        "IssueName": "Active Storage blob is attached once but unattached later on",
+                        "IssueUrl": "https://github.com/rails/rails/issues/41895"
+                    },
+                    {
+                        "IssueName": "Unable to Preview audio/vnd.wave in Chrome",
+                        "IssueUrl": "https://github.com/rails/rails/issues/41880"
+                    },
+                    {
+                        "IssueName": "Docs: Preloader refers to incorrect information about find",
+                        "IssueUrl": "https://github.com/rails/rails/issues/41879"
+                    },
+                    {
+                        "IssueName": "ActiveRecord::Relation #one? and #many? methods break when query contains a .group()",
+                        "IssueUrl": "https://github.com/rails/rails/issues/41870"
+                    },
+                    {
+                        "IssueName": "Confused by after_commit callback triggered for different actions",
+                        "IssueUrl": "https://github.com/rails/rails/issues/41869"
+                    },
+                    {
+                        "IssueName": "Including a scoped has_many..through association breaks the SQL in 6.1",
+                        "IssueUrl": "https://github.com/rails/rails/issues/41868"
+                    }
+                ]
+            },
+            {
+                "repoName": "jekyll",
+                "repoUrl": "https://github.com/jekyll/jekyll",
+                "issues": [
+                    {
+                        "IssueName": "feat: Expand glob patterns in include config option and related options",
+                        "IssueUrl": "https://github.com/jekyll/jekyll/issues/8630"
+                    },
+                    {
+                        "IssueName": "Conflict trying to generate custom robots.txt",
+                        "IssueUrl": "https://github.com/jekyll/jekyll/issues/8628"
+                    },
+                    {
+                        "IssueName": "Doing require 'backports' is deprecated and will not load any backport in the next major release",
+                        "IssueUrl": "https://github.com/jekyll/jekyll/issues/8622"
+                    },
+                    {
+                        "IssueName": "feat: Add line(s) highlighting option",
+                        "IssueUrl": "https://github.com/jekyll/jekyll/issues/8621"
+                    },
+                    {
+                        "IssueName": "feat: Powerful Includes",
+                        "IssueUrl": "https://github.com/jekyll/jekyll/issues/8617"
+                    },
+                    {
+                        "IssueName": "Update dependency constraint to allow for liquid v5.0.1",
+                        "IssueUrl": "https://github.com/jekyll/jekyll/issues/8615"
+                    },
+                    {
+                        "IssueName": "Changing a single page causes all the collections to rebuild",
+                        "IssueUrl": "https://github.com/jekyll/jekyll/issues/8605"
+                    },
+                    {
+                        "IssueName": "docs: update markdown options to kramdown 2",
+                        "IssueUrl": "https://github.com/jekyll/jekyll/issues/8593"
+                    }
+                ]
+            },
+            {
+                "repoName": "awesome-interview-questions",
+                "repoUrl": "https://github.com/DopplerHQ/awesome-interview-questions",
+                "issues": [
+                    {
+                        "IssueName": "Android questions quality",
+                        "IssueUrl": "https://github.com/DopplerHQ/awesome-interview-questions/issues/223"
+                    },
+                    {
+                        "IssueName": "Invalid link",
+                        "IssueUrl": "https://github.com/DopplerHQ/awesome-interview-questions/issues/222"
+                    },
+                    {
+                        "IssueName": "Help needed - Integration between SOA and oracle SOA",
+                        "IssueUrl": "https://github.com/DopplerHQ/awesome-interview-questions/issues/211"
+                    },
+                    {
+                        "IssueName": "want to add node.js interview questions ",
+                        "IssueUrl": "https://github.com/DopplerHQ/awesome-interview-questions/issues/200"
+                    },
+                    {
+                        "IssueName": "Can someone please check the links?",
+                        "IssueUrl": "https://github.com/DopplerHQ/awesome-interview-questions/issues/195"
+                    },
+                    {
+                        "IssueName": "Dead link under NodeJS section",
+                        "IssueUrl": "https://github.com/DopplerHQ/awesome-interview-questions/issues/169"
+                    },
+                    {
+                        "IssueName": "\"An Annotated List of DevOps Technical Interview Questions\" is not accessible",
+                        "IssueUrl": "https://github.com/DopplerHQ/awesome-interview-questions/issues/140"
+                    }
+                ]
+            },
+            {
+                "repoName": "discourse",
+                "repoUrl": "https://github.com/discourse/discourse",
+                "issues": [
+                    {
+                        "IssueName": "UI: adds styling for new github PR body details/summary",
+                        "IssueUrl": "https://github.com/discourse/discourse/pull/12669"
+                    },
+                    {
+                        "IssueName": "UX: uses native date picker when possible (eg: not safari)",
+                        "IssueUrl": "https://github.com/discourse/discourse/pull/12668"
+                    },
+                    {
+                        "IssueName": "DEV: implements part of ember-truth-helpers",
+                        "IssueUrl": "https://github.com/discourse/discourse/pull/12667"
+                    },
+                    {
+                        "IssueName": "FIX: only send user suspension emails if email message provided",
+                        "IssueUrl": "https://github.com/discourse/discourse/pull/12666"
+                    },
+                    {
+                        "IssueName": "FEATURE: Send an email notification when a post is approved.",
+                        "IssueUrl": "https://github.com/discourse/discourse/pull/12665"
+                    },
+                    {
+                        "IssueName": "DEV: Add alternative to asset-uri and image-uri in SCSS",
+                        "IssueUrl": "https://github.com/discourse/discourse/pull/12664"
+                    },
+                    {
+                        "IssueName": "FEATURE: adds last day to about page stats",
+                        "IssueUrl": "https://github.com/discourse/discourse/pull/12663"
+                    },
+                    {
+                        "IssueName": "FEATURE: impersonation now requires second factor authorization",
+                        "IssueUrl": "https://github.com/discourse/discourse/pull/12662"
+                    }
+                ]
+            },
+            {
+                "repoName": "fastlane",
+                "repoUrl": "https://github.com/fastlane/fastlane",
+                "issues": [
+                    {
+                        "IssueName": "fastlane gym export_method: development issues with .framework file built with Xcode 11.6 ",
+                        "IssueUrl": "https://github.com/fastlane/fastlane/issues/18533"
+                    },
+                    {
+                        "IssueName": "java.lang.IllegalArgumentException: Unknown package:",
+                        "IssueUrl": "https://github.com/fastlane/fastlane/issues/18527"
+                    },
+                    {
+                        "IssueName": "upload_to_testflight with distribute_only uses local IPA build number",
+                        "IssueUrl": "https://github.com/fastlane/fastlane/issues/18518"
+                    },
+                    {
+                        "IssueName": "Could not find release to update changelogs",
+                        "IssueUrl": "https://github.com/fastlane/fastlane/issues/18516"
+                    },
+                    {
+                        "IssueName": "Match: template_name param is not being honored",
+                        "IssueUrl": "https://github.com/fastlane/fastlane/issues/18505"
+                    },
+                    {
+                        "IssueName": "Swift fastlane does not run on Apple Silicon",
+                        "IssueUrl": "https://github.com/fastlane/fastlane/issues/18502"
+                    },
+                    {
+                        "IssueName": "upload_to_testflight choose wrong file",
+                        "IssueUrl": "https://github.com/fastlane/fastlane/issues/18499"
+                    },
+                    {
+                        "IssueName": "Promoting non-latest alpha track version to production fails on Google Play Store",
+                        "IssueUrl": "https://github.com/fastlane/fastlane/issues/18497"
+                    }
+                ]
+            },
+            {
+                "repoName": "brew",
+                "repoUrl": "https://github.com/Homebrew/brew",
+                "issues": [
+                    {
+                        "IssueName": "If you have a deleted cask installed, you cannot do anything",
+                        "IssueUrl": "https://github.com/Homebrew/brew/issues/11102"
+                    },
+                    {
+                        "IssueName": "Deduplicate GitHub Actions Usage",
+                        "IssueUrl": "https://github.com/Homebrew/brew/issues/11101"
+                    },
+                    {
+                        "IssueName": "Improve Shellcheck usage",
+                        "IssueUrl": "https://github.com/Homebrew/brew/issues/11086"
+                    },
+                    {
+                        "IssueName": "Change Big Sur macOS runner labels for consistency",
+                        "IssueUrl": "https://github.com/Homebrew/brew/issues/11076"
+                    },
+                    {
+                        "IssueName": "brew doctor sees default installations in /opt/homebrew as having a custom prefix",
+                        "IssueUrl": "https://github.com/Homebrew/brew/issues/11038"
+                    },
+                    {
+                        "IssueName": "Homebrew wants to remove a package, which has not been installed via Homebrew",
+                        "IssueUrl": "https://github.com/Homebrew/brew/issues/10988"
+                    },
+                    {
+                        "IssueName": "Impossible to migrate a formula that had previously been renamed",
+                        "IssueUrl": "https://github.com/Homebrew/brew/issues/10888"
+                    },
+                    {
+                        "IssueName": "Use binary patching to improve relocatability of bottles",
+                        "IssueUrl": "https://github.com/Homebrew/brew/issues/10846"
+                    }
+                ]
+            },
+            {
+                "repoName": "open-source-mac-os-apps",
+                "repoUrl": "https://github.com/serhii-londar/open-source-mac-os-apps",
+                "issues": [
+                    {
+                        "IssueName": "Suggested app: Monitor Bar",
+                        "IssueUrl": "https://github.com/serhii-londar/open-source-mac-os-apps/issues/637"
+                    },
+                    {
+                        "IssueName": "Icons need more dpi.",
+                        "IssueUrl": "https://github.com/serhii-londar/open-source-mac-os-apps/issues/635"
+                    },
+                    {
+                        "IssueName": "Icons for shell & applescript aren't displayed",
+                        "IssueUrl": "https://github.com/serhii-londar/open-source-mac-os-apps/issues/633"
+                    },
+                    {
+                        "IssueName": "oni: archived/replaced",
+                        "IssueUrl": "https://github.com/serhii-londar/open-source-mac-os-apps/issues/625"
+                    },
+                    {
+                        "IssueName": "Calculeta is now a paid app",
+                        "IssueUrl": "https://github.com/serhii-londar/open-source-mac-os-apps/issues/623"
+                    },
+                    {
+                        "IssueName": "go game",
+                        "IssueUrl": "https://github.com/serhii-londar/open-source-mac-os-apps/issues/622"
+                    },
+                    {
+                        "IssueName": "I published an menubar app - \"Countdown\"",
+                        "IssueUrl": "https://github.com/serhii-londar/open-source-mac-os-apps/issues/621"
+                    },
+                    {
+                        "IssueName": "Design for GitHub pages",
+                        "IssueUrl": "https://github.com/serhii-londar/open-source-mac-os-apps/issues/572"
+                    }
+                ]
+            },
+            {
+                "repoName": "gitlabhq",
+                "repoUrl": "https://github.com/gitlabhq/gitlabhq",
+                "issues": [
+                    {
+                        "IssueName": "Update README.md",
+                        "IssueUrl": "https://github.com/gitlabhq/gitlabhq/pull/10514"
+                    },
+                    {
+                        "IssueName": "Remove debug messages in application.log",
+                        "IssueUrl": "https://github.com/gitlabhq/gitlabhq/pull/10513"
+                    },
+                    {
+                        "IssueName": "12 9 stable => Failed to open TCP connection to api.github.com:443 (Connection refused - connect(2) for \\\"api.github.com\\\" port 443)",
+                        "IssueUrl": "https://github.com/gitlabhq/gitlabhq/pull/10507"
+                    },
+                    {
+                        "IssueName": "Added one question ",
+                        "IssueUrl": "https://github.com/gitlabhq/gitlabhq/pull/10504"
+                    },
+                    {
+                        "IssueName": "Delete LICENSE",
+                        "IssueUrl": "https://github.com/gitlabhq/gitlabhq/pull/10503"
+                    },
+                    {
+                        "IssueName": "Update Auto-DevOps.gitlab-ci.yml",
+                        "IssueUrl": "https://github.com/gitlabhq/gitlabhq/pull/10492"
+                    },
+                    {
+                        "IssueName": "fix url for external_url",
+                        "IssueUrl": "https://github.com/gitlabhq/gitlabhq/pull/10491"
+                    },
+                    {
+                        "IssueName": "enabled word breaking of card title",
+                        "IssueUrl": "https://github.com/gitlabhq/gitlabhq/pull/10485"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "projectName": "SQL",
+        "ProjectUrl": "https://github.com/topics/sql",
+        "repo": [
+            {
+                "repoName": "spark",
+                "repoUrl": "https://github.com/apache/spark",
+                "issues": [
+                    {
+                        "IssueName": "[SPARK-35019][PYTHON][SQL]Fix type hints mismatches in pyspark.sql.*",
+                        "IssueUrl": "https://github.com/apache/spark/pull/32122"
+                    },
+                    {
+                        "IssueName": "[SPARK-35017][SQL] Transfer ANSI intervals via Hive Thrift server",
+                        "IssueUrl": "https://github.com/apache/spark/pull/32121"
+                    },
+                    {
+                        "IssueName": "[SPARK-35015][PYTHON] Add missing type hints of pyspark.sql.*",
+                        "IssueUrl": "https://github.com/apache/spark/pull/32118"
+                    },
+                    {
+                        "IssueName": "[SPARK-34996][PYTHON] Port Koalas Series-related unit tests into PySpark",
+                        "IssueUrl": "https://github.com/apache/spark/pull/32117"
+                    },
+                    {
+                        "IssueName": "[SPARK-35023][BUILD] Migrate from deprecated in to slash syntax in SBT build file",
+                        "IssueUrl": "https://github.com/apache/spark/pull/32115"
+                    },
+                    {
+                        "IssueName": "[SPARK-35011][CORE] Avoid Block Manager registrations when StopExecutor msg is in-flight",
+                        "IssueUrl": "https://github.com/apache/spark/pull/32114"
+                    },
+                    {
+                        "IssueName": "[SPARK-35014] Fix the PhysicalAggregation pattern to not rewrite foldable expressions",
+                        "IssueUrl": "https://github.com/apache/spark/pull/32113"
+                    },
+                    {
+                        "IssueName": "[SPARK-28379][SQL] Allow non-aggregated single row correlated scalar subquery",
+                        "IssueUrl": "https://github.com/apache/spark/pull/32111"
+                    }
+                ]
+            },
+            {
+                "repoName": "tidb",
+                "repoUrl": "https://github.com/pingcap/tidb",
+                "issues": [
+                    {
+                        "IssueName": "Can't build master branch on Apple Silicon (arm64/AArch64-Apple-Darwin)  ",
+                        "IssueUrl": "https://github.com/pingcap/tidb/issues/23943"
+                    },
+                    {
+                        "IssueName": "Cannot build master branch",
+                        "IssueUrl": "https://github.com/pingcap/tidb/issues/23941"
+                    },
+                    {
+                        "IssueName": "v4.0.5 upgrade to 5.0.0, report \"indexWorker in IndexLookupExecutor panicked\" error",
+                        "IssueUrl": "https://github.com/pingcap/tidb/issues/23934"
+                    },
+                    {
+                        "IssueName": "The metrics of copr cache is no data",
+                        "IssueUrl": "https://github.com/pingcap/tidb/issues/23928"
+                    },
+                    {
+                        "IssueName": "query got error \"baseBuiltinFunc.vecEvalInt() should never be called\"",
+                        "IssueUrl": "https://github.com/pingcap/tidb/issues/23925"
+                    },
+                    {
+                        "IssueName": "Support for \"SELECT ... INTO <variable>\"",
+                        "IssueUrl": "https://github.com/pingcap/tidb/issues/23924"
+                    },
+                    {
+                        "IssueName": "how to record the client's ip  and the db'username ",
+                        "IssueUrl": "https://github.com/pingcap/tidb/issues/23923"
+                    },
+                    {
+                        "IssueName": "point-get return incorrect column original name when select with alias",
+                        "IssueUrl": "https://github.com/pingcap/tidb/issues/23921"
+                    }
+                ]
+            },
+            {
+                "repoName": "sequelize",
+                "repoUrl": "https://github.com/sequelize/sequelize",
+                "issues": [
+                    {
+                        "IssueName": "Simple type error found on simple select queries example on doc",
+                        "IssueUrl": "https://github.com/sequelize/sequelize/issues/13186"
+                    },
+                    {
+                        "IssueName": "postgres model.drop() throws error without options object passed",
+                        "IssueUrl": "https://github.com/sequelize/sequelize/issues/13184"
+                    },
+                    {
+                        "IssueName": "Simple typo error in the many-to-many-to-many relationship sample",
+                        "IssueUrl": "https://github.com/sequelize/sequelize/issues/13182"
+                    },
+                    {
+                        "IssueName": "updateOnDuplicate is ignored for associatiation tables in bulkCreate",
+                        "IssueUrl": "https://github.com/sequelize/sequelize/issues/13181"
+                    },
+                    {
+                        "IssueName": "Unable to remove junction table results when eager loading, as documented",
+                        "IssueUrl": "https://github.com/sequelize/sequelize/issues/13178"
+                    },
+                    {
+                        "IssueName": "Support for Deno",
+                        "IssueUrl": "https://github.com/sequelize/sequelize/issues/13176"
+                    },
+                    {
+                        "IssueName": "Slow Response with Sequelize Pagination for Larger Offset",
+                        "IssueUrl": "https://github.com/sequelize/sequelize/issues/13172"
+                    },
+                    {
+                        "IssueName": "Sequelize + Webpack in 2021 - Can you help me?",
+                        "IssueUrl": "https://github.com/sequelize/sequelize/issues/13169"
+                    }
+                ]
+            },
+            {
+                "repoName": "cockroach",
+                "repoUrl": "https://github.com/cockroachdb/cockroach",
+                "issues": [
+                    {
+                        "IssueName": "sentry: hlc.go:303: log.Fatal: wall time 1618128009461846876 is not allowed to be greater than upper bound of 1618128009421926463.\n--\n*errutil.leafError: log.Fatal: wall time 1618128009461846876 is not allowed to be greater than upper bound of 1618128009421926463. (1)\nhlc.go:303: *withstack.withStack (top exception)\n(check the extra data payloads)",
+                        "IssueUrl": "https://github.com/cockroachdb/cockroach/issues/63457"
+                    },
+                    {
+                        "IssueName": "sentry: error.go:29: pebble/table: invalid table 071173 (checksum mismatch at 5860363/14598)\n--\n*errutil.leafError: pebble/table: invalid table 071173 (checksum mismatch at 5860363/14598) (1)\nerror.go:29: *withstack.withStack (top exception)\n*markers.withMark\npanic.go:679: *withstack.withStack (2)\n(check the extra data payloads)",
+                        "IssueUrl": "https://github.com/cockroachdb/cockroach/issues/63455"
+                    },
+                    {
+                        "IssueName": "sentry: error.go:29: pebble/table: invalid table 071173 (checksum mismatch at 5860363/14598)\n--\n*errutil.leafError: pebble/table: invalid table 071173 (checksum mismatch at 5860363/14598) (1)\nerror.go:29: *withstack.withStack (top exception)\n*markers.withMark\npanic.go:679: *withstack.withStack (2)\n(check the extra data payloads)",
+                        "IssueUrl": "https://github.com/cockroachdb/cockroach/issues/63454"
+                    },
+                    {
+                        "IssueName": "roachtest: sqlalchemy failed",
+                        "IssueUrl": "https://github.com/cockroachdb/cockroach/issues/63453"
+                    },
+                    {
+                        "IssueName": "sentry: hlc.go:303: log.Fatal: wall time 1618090088905818881 is not allowed to be greater than upper bound of 1618090088886792499.\n--\n*errutil.leafError: log.Fatal: wall time 1618090088905818881 is not allowed to be greater than upper bound of 1618090088886792499. (1)\nhlc.go:303: *withstack.withStack (top exception)\n(check the extra data payloads)",
+                        "IssueUrl": "https://github.com/cockroachdb/cockroach/issues/63450"
+                    },
+                    {
+                        "IssueName": "roachtest: gossip/chaos/nodes=9 failed",
+                        "IssueUrl": "https://github.com/cockroachdb/cockroach/issues/63449"
+                    },
+                    {
+                        "IssueName": "roachtest: typeorm failed",
+                        "IssueUrl": "https://github.com/cockroachdb/cockroach/issues/63448"
+                    },
+                    {
+                        "IssueName": "sentry: replica_eval_context.go:37: log.Fatal: can't create a ReplicaEvalContext with assertions but no SpanSet\n--\n*errutil.leafError: log.Fatal: can't create a ReplicaEvalContext with assertions but no SpanSet (1)\nreplica_eval_context.go:37: *withstack.withStack (top exception)\n(check the extra data payloads)",
+                        "IssueUrl": "https://github.com/cockroachdb/cockroach/issues/63444"
+                    }
+                ]
+            },
+            {
+                "repoName": "dbeaver",
+                "repoUrl": "https://github.com/dbeaver/dbeaver",
+                "issues": [
+                    {
+                        "IssueName": "Reorganize PostgreSQL server-level nodes",
+                        "IssueUrl": "https://github.com/dbeaver/dbeaver/issues/12071"
+                    },
+                    {
+                        "IssueName": "[mysql] incorrect handling of stored procedure and function with the same name",
+                        "IssueUrl": "https://github.com/dbeaver/dbeaver/issues/12070"
+                    },
+                    {
+                        "IssueName": "Support for DuckDb",
+                        "IssueUrl": "https://github.com/dbeaver/dbeaver/issues/12068"
+                    },
+                    {
+                        "IssueName": "Upgrade Java to 11.0.9",
+                        "IssueUrl": "https://github.com/dbeaver/dbeaver/issues/12067"
+                    },
+                    {
+                        "IssueName": "Edit Actions Error",
+                        "IssueUrl": "https://github.com/dbeaver/dbeaver/issues/12066"
+                    },
+                    {
+                        "IssueName": "Support horizontal scroll using mouse buttons inside views with a scrollbar",
+                        "IssueUrl": "https://github.com/dbeaver/dbeaver/issues/12065"
+                    },
+                    {
+                        "IssueName": "Bad performance when creating new or editing existing Oracle database connections",
+                        "IssueUrl": "https://github.com/dbeaver/dbeaver/issues/12064"
+                    },
+                    {
+                        "IssueName": "Error with special characters in \"Open Database Object\"",
+                        "IssueUrl": "https://github.com/dbeaver/dbeaver/issues/12063"
+                    }
+                ]
+            },
+            {
+                "repoName": "osquery",
+                "repoUrl": "https://github.com/osquery/osquery",
+                "issues": [
+                    {
+                        "IssueName": "Create a Security Assurance guide for osquery",
+                        "IssueUrl": "https://github.com/osquery/osquery/issues/7047"
+                    },
+                    {
+                        "IssueName": "Windows_events not being logged",
+                        "IssueUrl": "https://github.com/osquery/osquery/issues/7045"
+                    },
+                    {
+                        "IssueName": "Update RockDB with the current host UUID when osqueryd start",
+                        "IssueUrl": "https://github.com/osquery/osquery/issues/7038"
+                    },
+                    {
+                        "IssueName": "Feature request: Add query name and trigger type to virtual table status logs",
+                        "IssueUrl": "https://github.com/osquery/osquery/issues/7037"
+                    },
+                    {
+                        "IssueName": "libc++abi.dylib uncaught exceptions on osquery 4.5+",
+                        "IssueUrl": "https://github.com/osquery/osquery/issues/7031"
+                    },
+                    {
+                        "IssueName": "scheduled queries on boot/startup",
+                        "IssueUrl": "https://github.com/osquery/osquery/issues/7030"
+                    },
+                    {
+                        "IssueName": "Sysmon based evented tables for windows",
+                        "IssueUrl": "https://github.com/osquery/osquery/issues/7020"
+                    },
+                    {
+                        "IssueName": "Update Thrift submodule to its new 0.14.1 release",
+                        "IssueUrl": "https://github.com/osquery/osquery/issues/7008"
+                    }
+                ]
+            },
+            {
+                "repoName": "ClickHouse",
+                "repoUrl": "https://github.com/ClickHouse/ClickHouse",
+                "issues": [
+                    {
+                        "IssueName": "Not to allow create different table with same zookeeper replica path",
+                        "IssueUrl": "https://github.com/ClickHouse/ClickHouse/issues/22970"
+                    },
+                    {
+                        "IssueName": "Build debian packages manually without the help of dh-*, dpkg-*, debuild, deb-* tools.",
+                        "IssueUrl": "https://github.com/ClickHouse/ClickHouse/issues/22963"
+                    },
+                    {
+                        "IssueName": "toUnixTimestamp64* wrong value with negative timestamps",
+                        "IssueUrl": "https://github.com/ClickHouse/ClickHouse/issues/22959"
+                    },
+                    {
+                        "IssueName": "Update Sign Field in CollapsingMeregTree Engine in Clickhouse",
+                        "IssueUrl": "https://github.com/ClickHouse/ClickHouse/issues/22949"
+                    },
+                    {
+                        "IssueName": "toYearWeek() wrong value",
+                        "IssueUrl": "https://github.com/ClickHouse/ClickHouse/issues/22948"
+                    },
+                    {
+                        "IssueName": "UBSan: AggregateFunctionTopK: ../src/Common/FieldVisitors.h:193:22: runtime error: 1e+20 is outside the range of representable values of type 'unsigned long'",
+                        "IssueUrl": "https://github.com/ClickHouse/ClickHouse/issues/22943"
+                    },
+                    {
+                        "IssueName": "primary index by equality condition not always used",
+                        "IssueUrl": "https://github.com/ClickHouse/ClickHouse/issues/22940"
+                    },
+                    {
+                        "IssueName": "support exchange partition between a partition of a table and a non parttion table",
+                        "IssueUrl": "https://github.com/ClickHouse/ClickHouse/issues/22933"
+                    }
+                ]
+            },
+            {
+                "repoName": "mybatis-3",
+                "repoUrl": "https://github.com/mybatis/mybatis-3",
+                "issues": [
+                    {
+                        "IssueName": "Mapping into Map<String, Object> contains driver specific value classes",
+                        "IssueUrl": "https://github.com/mybatis/mybatis-3/issues/2216"
+                    },
+                    {
+                        "IssueName": "Incorrect work with immutable objects",
+                        "IssueUrl": "https://github.com/mybatis/mybatis-3/issues/2207"
+                    },
+                    {
+                        "IssueName": "Support for JDK 16 record types ",
+                        "IssueUrl": "https://github.com/mybatis/mybatis-3/issues/2195"
+                    },
+                    {
+                        "IssueName": "Use param names for constructor auto-mapping",
+                        "IssueUrl": "https://github.com/mybatis/mybatis-3/issues/2192"
+                    },
+                    {
+                        "IssueName": "TypeHandler lost information of  actualTypeArguments when class is ParameterizedType",
+                        "IssueUrl": "https://github.com/mybatis/mybatis-3/issues/2187"
+                    },
+                    {
+                        "IssueName": "MyBatis is ignoring setting of typeHandler in @Result annotation in Mapper",
+                        "IssueUrl": "https://github.com/mybatis/mybatis-3/issues/2186"
+                    },
+                    {
+                        "IssueName": "Expose properties in DefaultParameterHandler.java ",
+                        "IssueUrl": "https://github.com/mybatis/mybatis-3/issues/2172"
+                    },
+                    {
+                        "IssueName": "When I changed the automatic commit of the connection, shouldn't I change the automatic commit of the corresponding transaction?",
+                        "IssueUrl": "https://github.com/mybatis/mybatis-3/issues/2171"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "projectName": "Java",
+        "ProjectUrl": "https://github.com/topics/java",
+        "repo": [
+            {
+                "repoName": "CS-Notes",
+                "repoUrl": "https://github.com/CyC2018/CS-Notes",
+                "issues": [
+                    {
+                        "IssueName": "计算机网络->传输层->TCP滑动窗口、拥塞控制等图未完全显示",
+                        "IssueUrl": "https://github.com/CyC2018/CS-Notes/issues/1072"
+                    },
+                    {
+                        "IssueName": "还更新吗",
+                        "IssueUrl": "https://github.com/CyC2018/CS-Notes/issues/1069"
+                    },
+                    {
+                        "IssueName": "数据库系统原理—隐式与“显示”锁定 中 “显示”应改成“显式” ",
+                        "IssueUrl": "https://github.com/CyC2018/CS-Notes/issues/1067"
+                    },
+                    {
+                        "IssueName": "可以增加书签吗，每次打开就...挺茫然的",
+                        "IssueUrl": "https://github.com/CyC2018/CS-Notes/issues/1063"
+                    },
+                    {
+                        "IssueName": "主页的标题错误",
+                        "IssueUrl": "https://github.com/CyC2018/CS-Notes/issues/1062"
+                    },
+                    {
+                        "IssueName": "java异常处理链接错误",
+                        "IssueUrl": "https://github.com/CyC2018/CS-Notes/issues/1061"
+                    },
+                    {
+                        "IssueName": "Leetcode刷题，双指针：88 Merge Sorted Array可以优化。",
+                        "IssueUrl": "https://github.com/CyC2018/CS-Notes/issues/1060"
+                    },
+                    {
+                        "IssueName": "关于数据库系统原理中Readview的疑惑",
+                        "IssueUrl": "https://github.com/CyC2018/CS-Notes/issues/1059"
+                    }
+                ]
+            },
+            {
+                "repoName": "JavaGuide",
+                "repoUrl": "https://github.com/Snailclimb/JavaGuide",
+                "issues": [
+                    {
+                        "IssueName": "期待Guide哥添加关于HashMap的红黑树退化链表以及红黑树的变色、左旋、右旋的添加",
+                        "IssueUrl": "https://github.com/Snailclimb/JavaGuide/issues/1152"
+                    },
+                    {
+                        "IssueName": "关于 “在一个静态方法内调用一个非静态成员为什么是非法的” 一点个人理解",
+                        "IssueUrl": "https://github.com/Snailclimb/JavaGuide/issues/1126"
+                    },
+                    {
+                        "IssueName": "更正：Dao 接口里的方法可以重载，但是Mybatis的XML里面的ID不允许重复！",
+                        "IssueUrl": "https://github.com/Snailclimb/JavaGuide/issues/1122"
+                    },
+                    {
+                        "IssueName": "期待添加安全相关的内容",
+                        "IssueUrl": "https://github.com/Snailclimb/JavaGuide/issues/1119"
+                    },
+                    {
+                        "IssueName": "期待增加es相关",
+                        "IssueUrl": "https://github.com/Snailclimb/JavaGuide/issues/1118"
+                    },
+                    {
+                        "IssueName": "操作系统部分",
+                        "IssueUrl": "https://github.com/Snailclimb/JavaGuide/issues/1113"
+                    },
+                    {
+                        "IssueName": "能不能补充下spring cloud的面试题",
+                        "IssueUrl": "https://github.com/Snailclimb/JavaGuide/issues/1099"
+                    },
+                    {
+                        "IssueName": "请问怎么把PDF深色化，就像《v3.0-JavaGuide面试突击版夜间模式.pdf》一样",
+                        "IssueUrl": "https://github.com/Snailclimb/JavaGuide/issues/1092"
+                    }
+                ]
+            },
+            {
+                "repoName": "java-design-patterns",
+                "repoUrl": "https://github.com/iluwatar/java-design-patterns",
+                "issues": [
+                    {
+                        "IssueName": "Setting up CircleCI workflow to allow contributors run their own CircleCI and SonarCloud",
+                        "IssueUrl": "https://github.com/iluwatar/java-design-patterns/issues/1697"
+                    },
+                    {
+                        "IssueName": "Improve caching pattern code quality",
+                        "IssueUrl": "https://github.com/iluwatar/java-design-patterns/issues/1694"
+                    },
+                    {
+                        "IssueName": "pdf document",
+                        "IssueUrl": "https://github.com/iluwatar/java-design-patterns/issues/1691"
+                    },
+                    {
+                        "IssueName": "License issue in MVVM pattern",
+                        "IssueUrl": "https://github.com/iluwatar/java-design-patterns/issues/1690"
+                    },
+                    {
+                        "IssueName": "Java 17 migration plan",
+                        "IssueUrl": "https://github.com/iluwatar/java-design-patterns/issues/1684"
+                    },
+                    {
+                        "IssueName": "Update the naked objects pattern example",
+                        "IssueUrl": "https://github.com/iluwatar/java-design-patterns/issues/1683"
+                    },
+                    {
+                        "IssueName": "Tests not being executed in naked-objects",
+                        "IssueUrl": "https://github.com/iluwatar/java-design-patterns/issues/1669"
+                    },
+                    {
+                        "IssueName": "Tests not being executed in serverless module",
+                        "IssueUrl": "https://github.com/iluwatar/java-design-patterns/issues/1667"
+                    }
+                ]
+            },
+            {
+                "repoName": "spring-boot",
+                "repoUrl": "https://github.com/spring-projects/spring-boot",
+                "issues": [
+                    {
+                        "IssueName": "Provide auto-configuration for using Apache HttpClient 5 with WebClient",
+                        "IssueUrl": "https://github.com/spring-projects/spring-boot/issues/26004"
+                    },
+                    {
+                        "IssueName": "Revert 5e03612a once micrometer-metrics/micrometer#2557 has been fixed",
+                        "IssueUrl": "https://github.com/spring-projects/spring-boot/issues/26003"
+                    },
+                    {
+                        "IssueName": "Test encoding with Spring MVC Resources",
+                        "IssueUrl": "https://github.com/spring-projects/spring-boot/issues/25999"
+                    },
+                    {
+                        "IssueName": "Auto-configure micrometer DiskSpaceMetrics",
+                        "IssueUrl": "https://github.com/spring-projects/spring-boot/issues/25996"
+                    },
+                    {
+                        "IssueName": "Allow build image caches to use the container file system instead of volumes",
+                        "IssueUrl": "https://github.com/spring-projects/spring-boot/issues/25995"
+                    },
+                    {
+                        "IssueName": "Allow build image cache volume names to be customized",
+                        "IssueUrl": "https://github.com/spring-projects/spring-boot/issues/25994"
+                    },
+                    {
+                        "IssueName": "Upgrade to json-smart 2.4.2",
+                        "IssueUrl": "https://github.com/spring-projects/spring-boot/issues/25946"
+                    },
+                    {
+                        "IssueName": "A functional command line runner",
+                        "IssueUrl": "https://github.com/spring-projects/spring-boot/issues/25945"
+                    }
+                ]
+            },
+            {
+                "repoName": "elasticsearch",
+                "repoUrl": "https://github.com/elastic/elasticsearch",
+                "issues": [
+                    {
+                        "IssueName": "\"query_string\" parser has changed in 7.x to allow bad percolator queries",
+                        "IssueUrl": "https://github.com/elastic/elasticsearch/issues/71532"
+                    },
+                    {
+                        "IssueName": "[DOCS] Link to current release document should point to current page in the current docs, when possible.",
+                        "IssueUrl": "https://github.com/elastic/elasticsearch/issues/71528"
+                    },
+                    {
+                        "IssueName": "Weird behaviour on the 7.12 version documentation on webpage.",
+                        "IssueUrl": "https://github.com/elastic/elasticsearch/issues/71523"
+                    },
+                    {
+                        "IssueName": "support case_insensitive in terms query",
+                        "IssueUrl": "https://github.com/elastic/elasticsearch/issues/71520"
+                    },
+                    {
+                        "IssueName": "RemoteClusterConnectionTests#testEnsureConnected fails",
+                        "IssueUrl": "https://github.com/elastic/elasticsearch/issues/71519"
+                    },
+                    {
+                        "IssueName": "[Feature Request] Highlighting API with provided document",
+                        "IssueUrl": "https://github.com/elastic/elasticsearch/issues/71511"
+                    },
+                    {
+                        "IssueName": "[CI] ChainingInputStreamTests testResetForDoubleMarkAnywhere failing",
+                        "IssueUrl": "https://github.com/elastic/elasticsearch/issues/71510"
+                    },
+                    {
+                        "IssueName": "[CI] ApiKeyTests testXContent failing",
+                        "IssueUrl": "https://github.com/elastic/elasticsearch/issues/71502"
+                    }
+                ]
+            },
+            {
+                "repoName": "advanced-java",
+                "repoUrl": "https://github.com/doocs/advanced-java",
+                "issues": [
+                    {
+                        "IssueName": "能不能添加redis主从复制，如何保证一致性的问题和答案。",
+                        "IssueUrl": "https://github.com/doocs/advanced-java/issues/214"
+                    },
+                    {
+                        "IssueName": "【开源项目维护】一起吗？ | Want to join us?",
+                        "IssueUrl": "https://github.com/doocs/advanced-java/issues/61"
+                    }
+                ]
+            },
+            {
+                "repoName": "interviews",
+                "repoUrl": "https://github.com/kdn251/interviews",
+                "issues": [
+                    {
+                        "IssueName": "Deque interface should be used instead of Stack class in sorting a stack",
+                        "IssueUrl": "https://github.com/kdn251/interviews/issues/193"
+                    },
+                    {
+                        "IssueName": "Interview",
+                        "IssueUrl": "https://github.com/kdn251/interviews/issues/174"
+                    },
+                    {
+                        "IssueName": "binary search tree",
+                        "IssueUrl": "https://github.com/kdn251/interviews/issues/158"
+                    },
+                    {
+                        "IssueName": "NPE bugs in MaximumProductOfWordLengths.java and RemoveDuplicatesFromSortedArray.java",
+                        "IssueUrl": "https://github.com/kdn251/interviews/issues/156"
+                    },
+                    {
+                        "IssueName": "Bug in google/3sumsmaller",
+                        "IssueUrl": "https://github.com/kdn251/interviews/issues/154"
+                    },
+                    {
+                        "IssueName": "Compilation Error in FindMissingInteger class",
+                        "IssueUrl": "https://github.com/kdn251/interviews/issues/152"
+                    },
+                    {
+                        "IssueName": "Adding more problems for Adobe",
+                        "IssueUrl": "https://github.com/kdn251/interviews/issues/144"
+                    },
+                    {
+                        "IssueName": "Master is not compiling, Missing import statements(Java 8)",
+                        "IssueUrl": "https://github.com/kdn251/interviews/issues/129"
+                    }
+                ]
+            },
+            {
+                "repoName": "mall",
+                "repoUrl": "https://github.com/macrozheng/mall",
+                "issues": [
+                    {
+                        "IssueName": "不能根据单个商品生成预订单和订单。",
+                        "IssueUrl": "https://github.com/macrozheng/mall/issues/469"
+                    },
+                    {
+                        "IssueName": "老大，后端项目直接用端口访问会不会有问题？",
+                        "IssueUrl": "https://github.com/macrozheng/mall/issues/468"
+                    },
+                    {
+                        "IssueName": "Is there any customer center in your admin backend service?",
+                        "IssueUrl": "https://github.com/macrozheng/mall/issues/466"
+                    },
+                    {
+                        "IssueName": "请问，有商品分类，为啥还设计了一个商品属性分类呢？",
+                        "IssueUrl": "https://github.com/macrozheng/mall/issues/460"
+                    },
+                    {
+                        "IssueName": "管理后台没有看到会员模块",
+                        "IssueUrl": "https://github.com/macrozheng/mall/issues/452"
+                    },
+                    {
+                        "IssueName": "es使用java.util.Date时转换报错",
+                        "IssueUrl": "https://github.com/macrozheng/mall/issues/432"
+                    },
+                    {
+                        "IssueName": "单词拼写错误",
+                        "IssueUrl": "https://github.com/macrozheng/mall/issues/406"
+                    },
+                    {
+                        "IssueName": "锁定库存的问题",
+                        "IssueUrl": "https://github.com/macrozheng/mall/issues/376"
+                    }
+                ]
+            }
+        ]
+    }
+]
