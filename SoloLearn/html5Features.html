@@ -23,10 +23,100 @@ Elements: <img>, <span>, <strong>, <label>, <br />, <small>, <sub>, and more.
 <html>
 <head>
     <title>Title</title>
+    <script>
+        localStorage.setItem("harpreet","coder");
+        // alert(localStorage.getItem("harpreet"));
+        localStorage.removeItem("harpreet");    //All these things can be done using sessionStorage
+        localStorage.clear();                   //instead of localStorage 
+        navigator.geolocation.getCurrentPosition();   
+        function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}       
+    </script> 
 </head>
 
 <body>
+    <header>
+        <h1>Most important heading</h1>
+        <h3>less important heading</h3>
+    </header>
     The content of the document
+    <article>
+        <h1>Article heading</h1>
+        <p>Contents of the article</p>
+        <h1>Welcome</h1>
+        <section>
+            <h1>Heading</h1>
+            <p>Contents of the section</p>
+        </section>
+        <h1>Gifts for everyone</h1>
+        <p>THis website is the best place for choosing the gifts</p>
+        <aside>
+            <p>The gifts will be delivered to you within 24 hours</p>
+        </aside>
+    </article>
+    <audio src="Sidhu Moosewala - Dollar (Single from 'Dakuaan Da Munda').mp3" controls  loop>Audio element is supported</audio>
+    <audio controls loop>
+        <!--<audio controls autoplay loop>-->
+        <source src="Atif Aslam - Woh Lamhe.mp3" type="audio/mpeg">
+        Audio not supported by the browser <!--The text between audio tag is shown when the audio is not supoorted by the browser -->
+    </audio>
+    <video src="Educational Website made byTeam WDC-T75 ie Active Developers for WDC 2020 organized by f5 developers.mp4" loop controls>Video not supported by the browser</video>
+    <!-- <video autoplay loop controls>
+        <source src="Educational Website made byTeam WDC-T75 ie Active Developers for WDC 2020 organized by f5 developers.mp4" type="video/mp4">
+        <source src="Educational Website made byTeam WDC-T75 ie Active Developers for WDC 2020 organized by f5 developers.ogg" type="video/ogg">
+
+    </video> -->
+    <div id="box" ondrop="drop(event)"
+   ondragover="allowDrop(event)"
+   style="border:1px solid black; 
+   width:200px; height:200px"></div>
+
+   <img id="image" src="sardaarJi.jpg" draggable="true"
+   ondragstart="drag(event)" width="150" height="50" alt="" />
+    <br/>
+    <svg height="200" width="200">
+        <circle cx="80" cy="80" r="50" fill="green"/>
+    </svg>
+    <svg height="200" width="200">
+        <rect height="100" width="200" x="20" y="20" fill="red"/>
+    </svg>
+    <svg height="200" width="200">
+        <line x1=30 y1=10 x2=100 y2=110 style="stroke:#000000; stroke-linecap:round; stroke-width:20;" />
+    </svg>
+    <svg width="200" height="200">
+        <polyline style="stroke-linejoin:miter; stroke:blue; stroke-width:15; fill:none;" points="10 10, 100 100 , 190 10"/>
+    </svg>
+    <svg width="400" height="200">
+        <ellipse cx="200" cy="100" rx="150" ry="70" fill="green"/>
+    </svg>
+    <svg height="200" width="300">
+        <polygon points="100 100,200 200,300 50" style="fill:darkblue; stroke:black;"/>
+    </svg>
+    <br/>
+    <img src="sardaarJi.svg" alt="sardaarJi" height="300"/>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About us</a></li>            
+        </ul>
+    </nav>
+    <footer>
+        HTML: <progress min="0" max="100" value="80"></progress>
+        <h2>End</h2>
+    </footer>
 </body>
 
 </html>
