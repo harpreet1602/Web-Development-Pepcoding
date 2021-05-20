@@ -42,6 +42,11 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 }       
+var can=document.getElementById("canvas1");
+var ctx=can.getContext("2d");
+
+ctx.fillStyle="rgba(0,200,0,1)";
+ctx.fillRect(36,10,22,22);
     </script> 
 </head>
 
@@ -105,7 +110,19 @@ function drop(ev) {
     </svg>
     <br/>
     <img src="sardaarJi.svg" alt="sardaarJi" height="300"/>
-    
+    <svg height="300" width="500">
+        <rect width="150" height="200" fill="green">
+        <animate attributeName="x" from="0" to="300" dur="3s" fill="freeze" repeatCount="2"/>    
+        </rect>
+        </svg>
+        <svg height="200" width="300">
+            <path d="M 0 0 L200 200 L200 0 Z" style="stroke:#000; fill:none;"/>
+        </svg>
+        
+        <svg width="150" height="150">
+            <path d="M 0 0 L0 100 L100 100 L100 0 Z"/>
+        </svg>
+        <canvas id="canvas1" width="200" height="200"></canvas>
     <nav>
         <ul>
             <li><a href="#">Home</a></li>
