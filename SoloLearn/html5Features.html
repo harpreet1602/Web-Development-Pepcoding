@@ -24,29 +24,41 @@ Elements: <img>, <span>, <strong>, <label>, <br />, <small>, <sub>, and more.
 <head>
     <title>Title</title>
     <script>
-        localStorage.setItem("harpreet","coder");
-        // alert(localStorage.getItem("harpreet"));
-        localStorage.removeItem("harpreet");    //All these things can be done using sessionStorage
-        localStorage.clear();                   //instead of localStorage 
-        navigator.geolocation.getCurrentPosition();   
-        function allowDrop(ev) {
-    ev.preventDefault();
-}
+//         localStorage.setItem("harpreet","coder");
+//         // alert(localStorage.getItem("harpreet"));
+//         localStorage.removeItem("harpreet");    //All these things can be done using sessionStorage
+//         localStorage.clear();                   //instead of localStorage 
+//         navigator.geolocation.getCurrentPosition();   
+//         function allowDrop(ev) {
+//     ev.preventDefault();
+// }
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
+// function drag(ev) {
+//     ev.dataTransfer.setData("text", ev.target.id);
+// }
 
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-}       
+// function drop(ev) {
+//     ev.preventDefault();
+//     var data = ev.dataTransfer.getData("text");
+//     ev.target.appendChild(document.getElementById(data));
+// }       
 var can=document.getElementById("canvas1");
 var ctx=can.getContext("2d");
 
 ctx.fillStyle="rgba(0,200,0,1)";
 ctx.fillRect(36,10,22,22);
+ctx.font="bold 22px Tahoma";
+ctx.textAlign="start";
+ctx.fillText("start",10,30);
+ctx.translate(100,150);
+ctx.fillText("after translate",10,30);
+ctx.rotate((Math.PI/180)*25); //rotate 25 degrees
+ctx.fillStyle="#0000FF";
+ctx.fillRect(10.10,100,100);
+ctx.rotate(1);
+ctx.fillText("after rotate",0,0);
+ctx.scale(1.5,4);
+ctx.fillText("after scale",0,20);
     </script> 
 </head>
 
@@ -122,8 +134,41 @@ ctx.fillRect(36,10,22,22);
         <svg width="150" height="150">
             <path d="M 0 0 L0 100 L100 100 L100 0 Z"/>
         </svg>
-        <canvas id="canvas1" width="200" height="200"></canvas>
-    <nav>
+        <canvas id="canvas1" width="200" height="200"></canvas> 
+       <br/>
+       <br/>
+       <form autocomplete="off">
+           <label>Your Name:</label>
+           <input id="user" name="username" type="text" placeholder="Enter your name"autofocus/>
+           <br/> 
+           <label for="email">Your e-mail address: </label>
+            <input type="email" name="email" placeholder="email@example.com" required/>
+            <br/>
+            <label for="search">Search:</label>
+            <input id="mysearch" name="searchitem" type="search" list="colors"/>
+            <datalist id="colors">
+                <option value="Red">
+                <option value="Green">
+                <option value="Yellow">
+            </datalist>
+            <br/>
+            <label for="Dropdown">Dropdown of Colors:</label>
+            <input id="car" type="text" list="colors"/>
+            <datalist id="colors">
+                <option value="Red">
+                <option value="Green">
+                <option value="Yellow">
+            </datalist>
+            <br/>
+            <label for="url">Url:</label>
+            <input id="url" type="url" name="url" placeholder="example.com"/>
+            <br/>
+            <label for="tel">Phone number:</label>
+            <input type="tel" id="tel" name="tel" placeholder="555.555.1211"/>
+            <br/>
+            <input type="submit" value="Submit"/>
+        </form> 
+      <nav>
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Services</a></li>
