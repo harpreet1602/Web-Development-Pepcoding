@@ -9,12 +9,12 @@ body{
     width:100vw;
 }
 .navbar{
-    height:12vh;
+    height:12%;
     background:#333333; 
     display:flex;
 }
 .grid{
-    height:88vh;
+    height:88%;
     background:#f2f2f2;
     display:flex;
 }
@@ -22,26 +22,29 @@ body{
     margin-left:4rem;
     margin-top:1.5vh;
     height:75%;
-    width:12vw;
     display:flex;
     border-radius:5px;
     background:#444444;
 }
+.filter-container{
+    width:8rem;
+}
+.action-container{
+    width:4rem;
+}
 .filter{
-    width:3vw;
+    width:25%;
+    height:100%;
 }
 .filter:hover,.add:hover,.delete:hover{
     background-color: #393939;
 }
 .filter div{
-    height:5vh;
+    height:50%;
     border-radius:2px;
-    width:1.25vw;
+    width:50%;
     margin:auto;
-    margin-top:2vh;
-}
-.action-container{
-    width:8vw;
+    margin-top:2.25vh;
 }
 .pink-color-btn,.pink{
     background:#d595aa;
@@ -62,12 +65,12 @@ body{
     text-align:center;
 }
 .add{
-    padding-top:0.7rem;
-    font-size:2rem;
+    padding-top:1rem;
+    font-size:1.5rem;
 }
 .delete{
-    padding-top:0.7rem;
-    font-size:2rem;
+    padding-top:1rem;
+    font-size:1.5rem;
 }
 .modal-container{
     height:18rem;
