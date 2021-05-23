@@ -16,6 +16,7 @@ body{
 .grid{
     height:88vh;
     background:#f2f2f2;
+    display:flex;
 }
 .filter-container,.action-container{
     margin-left:4rem;
@@ -29,6 +30,9 @@ body{
 .filter{
     width:3vw;
 }
+.filter:hover,.add:hover,.delete:hover{
+    background-color: #393939;
+}
 .filter div{
     height:5vh;
     border-radius:2px;
@@ -39,16 +43,16 @@ body{
 .action-container{
     width:8vw;
 }
-.pink-color-btn{
+.pink-color-btn,.pink{
     background:#d595aa;
 }
-.blue-color-btn{
+.blue-color-btn,.blue{
     background:#5ecdde;
 }
-.green-color-btn{
+.green-color-btn,.green{
     background:#91e6c7;
 }
-.black-color-btn{
+.black-color-btn,.black{
     background:#000000;
 }
 .add,.delete{
@@ -58,8 +62,48 @@ body{
     text-align:center;
 }
 .add{
-    font-size:2.75rem;
+    padding-top:0.7rem;
+    font-size:2rem;
 }
 .delete{
-    font-size:2.75rem;
+    padding-top:0.7rem;
+    font-size:2rem;
+}
+.modal-container{
+    height:18rem;
+    width:35rem;
+    border:2px solid;
+    display:flex;
+    position:fixed;
+    left:calc((100vw - 35rem)/2);
+    top:calc((100vh - 18rem)/2);
+    box-shadow:0px 5px 10px 3px #aaa;
+}
+.writing-area{
+    height:100%;
+    width:70%;
+    background-color: white;
+    font-size:1.8rem;
+    padding:2rem;
+    outline:none;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.filter-area{
+    height:100%;
+    width:30%;
+    background-color: #444444;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.modal-filter{
+    margin-top:10px;
+    border:1px red solid;
+    height:2.5rem;
+    width:50%;
+    opacity:0.7;
+}
+.modal-filter:hover{
+    opacity:1;
 }

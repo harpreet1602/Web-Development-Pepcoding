@@ -56,16 +56,20 @@ body {
   width: 50%;
 }
 
-.pink-color-btn {
+.pink-color-btn,
+.pink {
   background-color: #d595aa;
 }
-.blue-color-btn {
+.blue-color-btn,
+.blue {
   background-color: #5ecdde;
 }
-.green-color-btn {
+.green-color-btn,
+.green {
   background-color: #91e6c7;
 }
-.black-color-btn {
+.black-color-btn,
+.black {
   background-color: black;
 }
 
@@ -90,4 +94,45 @@ body {
 .add:hover,
 .delete:hover {
   background-color: #393939;
+}
+
+.modal-container {
+  box-shadow: 0px 5px 10px 0px #aaa;
+  height: 18rem;
+  width: 35rem;
+  display: flex;
+  position: fixed;
+  top: calc((100vh - 18rem) / 2);
+  left: calc((100vw - 35rem) / 2);
+}
+
+.writing-area {
+  background-color: white;
+  height: 100%;
+  width: 70%;
+  padding: 2rem;
+  outline: none;
+  font-size: 1.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.filter-area {
+  background-color: #444;
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-filter {
+  opacity: 0.7;
+  width: 50%;
+  height: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.modal-filter:hover {
+  opacity: 1;
 }

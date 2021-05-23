@@ -10,6 +10,7 @@ let colors = {
 for (let i = 0; i < allFilters.length; i++) {
   allFilters[i].addEventListener("click", function (e) {
     let color = e.currentTarget.classList[0].split("-")[0];
+ 
     grid.style.backgroundColor = colors[color];
   });
 }
