@@ -103,7 +103,6 @@ body{
 }
 .modal-filter{
     margin-top:10px;
-    border:1px red solid;
     height:2.5rem;
     width:50%;
     opacity:0.7;
@@ -119,7 +118,6 @@ body{
 .ticket-color{
     height:5%;
     width:100%;
-    background:red;
 }
 .ticket-id{
     height:20%;
@@ -137,4 +135,9 @@ body{
     height:75%;
     width:100%;
     outline:none;
+}
+.active-modal-filter
+{
+    border:5px solid red;
+    opacity:1;
 }
