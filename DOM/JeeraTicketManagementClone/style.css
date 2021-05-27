@@ -17,6 +17,7 @@ body{
     height:88%;
     background:#f2f2f2;
     display:flex;
+    overflow:auto;
 }
 .filter-container,.action-container{
     margin-left:4rem;
@@ -114,6 +115,7 @@ body{
     height:8rem;
     width:15rem;
     border:1px solid #000000;
+    margin:10px;
 }
 .ticket-color{
     height:5%;

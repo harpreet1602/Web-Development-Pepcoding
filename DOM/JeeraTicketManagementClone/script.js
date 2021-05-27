@@ -1,3 +1,4 @@
+//const shortid= require('shortid');
 let allFilters = document.querySelectorAll(".filter div");
 let grid = document.querySelector(".grid");
 let addButton = document.querySelector(".add");
@@ -40,13 +41,16 @@ addButton.addEventListener("click", function () {
         let color=selectedModalFilter.classList[1];
         let ticket=document.createElement("div");
         ticket.classList.add("ticket");
+        //var short=shortid.generate();
+        var uuid = Math.random().toString(36).slice(-6);
         ticket.innerHTML=`<div class="ticket-color ${color}"></div>
-        <div class="ticket-id">#234562</div>
+        <div class="ticket-id">#${uuid}</div>
         <div class="ticket-box" contenteditable>
         ${task}
         </div>`;
         grid.appendChild(ticket);
         modal.remove();
+        modalVisible=false;
         }
     });
     body.appendChild(modal);
@@ -69,7 +73,3 @@ for (let i = 0; i < allFilters.length; i++) {
         grid.style.backgroundColor = colors[color];
     });
 }
-
-
-
-
