@@ -12,8 +12,7 @@
       // Q- On clicking the button append hello to the page
       let button=document.querySelector("button");
       let body=document.querySelector("body");
-      button.addEventListener("click",function()
-      {
+      button.addEventListener("click",function(e){
         let p=document.createElement("p");
         p.innerText="hello";
         body.append(p);

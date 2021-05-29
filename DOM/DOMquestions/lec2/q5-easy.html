@@ -100,23 +100,22 @@
     </div>
     <script>
       // Q Make the filter work
-      let tickets=document.querySelectorAll(".movies");
       let select=document.querySelector("select");
-
-       select.addEventListener("change",function(e){
-        let category=e.currentTarget.value;
-        for(let i=0;i<tickets.length;i++)
-        {
-          let p=tickets[i].querySelector("p");
-          if(p.getAttribute("data-category")==category || category=="none")
+      let movies=document.querySelectorAll(".movies");
+      select.addEventListener("change",function(e){
+        let category=select.value; 
+        for(let i=0;i<movies.length;i++)
           {
-            tickets[i].style.display="block";
-          }else{
-              tickets[i].style.display="none";
+            let dataCategory=movies[i].querySelector("p").getAttribute("data-category");
+            if(category==dataCategory || category=="none")
+            {
+                movies[i].style.display="block";
+            }
+            else{
+                movies[i].style.display="none";
+            }
           }
-        }
-        });
-     
+      });
     </script>
   </body>
 </html>

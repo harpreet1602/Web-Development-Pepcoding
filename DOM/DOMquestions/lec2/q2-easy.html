@@ -31,22 +31,25 @@
     // Q write a script which on single clicking of above p tags 
     //highlights them with red, double clicking highlights them with green and 
     //on triple removes the highlights.
-    let paras = document.querySelectorAll("p");
-    for (let i = 0; i < paras.length; i++) {
-      paras[i].addEventListener("click", function (e) {
-         //console.log(e.detail);
-        if (e.detail == 3) {
-          e.currentTarget.style.background = "none";
-        }
-        else if (e.detail == 2) {
-          e.currentTarget.style.background = "green";
-        }
-        else if (e.detail == 1) {
-          e.currentTarget.style.background = "red";
-        }
-      });
-    }
+   let paras=document.querySelectorAll("p");
+   for(let i=0;i<paras.length;i++)
+   {
+     paras[i].addEventListener("click",function(e){
+       console.log(e.detail);
+      if(e.detail==3)
+      {
+          paras[i].style.background="none";
+      }
+      else if(e.detail==2)
+      {
+          paras[i].style.background="green";
+      }
+      else if(e.detail==1)
+      {
+        e.currentTarget.style.backgroundColor="red";
+      }
+     })
+   }
   </script>
 </body>
-
 </html>

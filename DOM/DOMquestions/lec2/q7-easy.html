@@ -41,27 +41,28 @@
       <div class="card"></div>
     </div>
     <script>
-      //  Q Create a generic function to select all sibling of a given node. Using that function delete all siblings of red card
-      function getAllSiblings(node)
-      {
-        let parent=node.parentElement;
-        let allChildren=parent.querySelectorAll("*");
-        let arr=[];
-        for(let i=0;i<allChildren.length;i++)
-        {
-          if(allChildren[i]!=node)
+      //  Q Create a generic function to select all sibling of a given node. 
+      //Using that function delete all siblings of red card
+     function getAllSiblings(node)
+     {
+          let parent=node.parentElement;
+          let allChildren=parent.querySelectorAll("*");
+          let arr=[];
+          for(let i=0;i<allChildren.length;i++)
           {
-            arr.push(allChildren[i]);
+            if(allChildren[i]!=node)
+            {
+              arr.push(allChildren[i]);
+            }
           }
-        }
-        return arr;
-      }
-      let redCard=document.querySelector(".red");
-      let siblings=getAllSiblings(redCard);
-      for(let i=0;i<siblings.length;i++)
-      {
-        siblings[i].remove();
-      }
+          return arr;
+     }
+     let redcard=document.querySelector(".red");
+     let siblings=getAllSiblings(redcard);
+     for(let i=0;i<siblings.length;i++)
+     {
+       siblings[i].remove();
+     }
     </script>
   </body>
 </html>

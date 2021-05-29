@@ -30,18 +30,36 @@
       <div class="yellow"></div>
     </div>
     <script>
-      //Q The following code is broken. Even when clicked on yellow, its alerted that red is clicked. Fix it
-      let red = document.querySelector(".red");
-      let yellow=document.querySelector(".yellow");
-      yellow.addEventListener("click",function(e){
-        alert("yellow was clicked");
-        event.stopPropagation();
-      });
-      red.addEventListener("click", function () {
-        alert("red was clicked");
-      });
-
-      
+      //Q The following code is broken. Even when clicked on yellow, 
+      //its alerted that red is clicked. Fix it
+     let red=document.querySelector(".red");
+     let yellow=document.querySelector(".yellow");
+     red.addEventListener("click",function(e){
+      //if(e.target!=e.currentTarget) return;
+      alert("red was clicked");
+     });
+     yellow.addEventListener("click",function(e){
+      alert("yellow was clicked");
+      e.stopPropagation();
+     });
     </script>
   </body>
 </html>
+function getElement(attribute)
+{
+  let allElements=document.querySelectorAll("*");
+  let required=[];
+  for(let i=0;i<allElements.length;i++)
+  {
+      if(allElements[i].getAttribute(attribute)!=null)
+      {
+        required.push(allElements[i]);
+      }
+  }
+  return required;
+}
+let arr=getElement("data-test");
+for(let i=0;i<arr.length;i++)
+  {
+    console.log(arr[i]);
+  }
