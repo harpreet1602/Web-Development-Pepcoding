@@ -1,18 +1,33 @@
-//const shortid= require('shortid');
 let allFilters = document.querySelectorAll(".filter div");
 let grid = document.querySelector(".grid");
 let addButton = document.querySelector(".add");
 let body = document.querySelector("body");
 let modalVisible = false;
-
+let short=new ShortUniqueId();
 let colors = {
     pink: "#d595aa",
     blue: "#5ecdde",
     green: "#91e6c7",
     black: "black"
 };
+let colorClasses=["pink","blue","green","black"];
+let delbtn=document.querySelector(".delete");
+let delState=false;
+let ticket;
+
+//initialization step of local storage
+if(!localStorage.getItem("tasks"))
+{
+    localStorage.setItem("tasks",JSON.stringify([]));
+}
+
 addButton.addEventListener("click", function () {
     if (modalVisible) return;
+    if(delbtn.classList.contains("del-state"))
+    {
+        delState=false;
+        delbtn.classList.remove("del-state");
+    }
     let modal = document.createElement("div");
     modal.classList.add("modal-container");
     modal.setAttribute("click-first", true);
@@ -41,16 +56,31 @@ addButton.addEventListener("click", function () {
         let color=selectedModalFilter.classList[1];
         let ticket=document.createElement("div");
         ticket.classList.add("ticket");
-        //var short=shortid.generate();
-        var uuid = Math.random().toString(36).slice(-6);
+        //var uuid = Math.random().toString(36).slice(-6);
         ticket.innerHTML=`<div class="ticket-color ${color}"></div>
-        <div class="ticket-id">#${uuid}</div>
+        <div class="ticket-id">#${short()}</div>
         <div class="ticket-box" contenteditable>
         ${task}
         </div>`;
         grid.appendChild(ticket);
         modal.remove();
         modalVisible=false;
+        ticket.addEventListener("click",function(e){
+            if(delState)
+            {
+                e.currentTarget.remove();
+            }
+            let ticketcol=ticket.querySelector(".ticket-color");
+            ticketcol.addEventListener("click",function(e){
+                let currcol=e.currentTarget.classList[1];
+                let ind=colorClasses.indexOf(currcol);
+                ind++;
+                ind=ind%4;
+                e.currentTarget.classList.remove(currcol);
+                e.currentTarget.classList.add(colorClasses[ind]);
+            });
+        });
+    
         }
     });
     body.appendChild(modal);
@@ -66,6 +96,17 @@ addButton.addEventListener("click", function () {
     }
 });
 
+    delbtn.addEventListener("click",function(e){
+        if(delState){ 
+            delState=false;
+            delbtn.classList.remove("del-state");
+        }
+            else{ 
+        delState=true;
+            delbtn.classList.add("del-state");
+    }
+    });
+  
 for (let i = 0; i < allFilters.length; i++) {
     allFilters[i].addEventListener("click", function (e) {
         let color = e.currentTarget.classList[0].split("-")[0];
