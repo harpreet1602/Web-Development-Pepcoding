@@ -13,10 +13,36 @@
       voluptate recusandae, consequuntur quidem, voluptates, non quaerat soluta
       illum.
     </p>
+    
     <script>
       // Q Write a generic function to get elements by given attribute.
       // Using that function select the above p tag and console.log(); it
-      
+      //This is specific not generic
+      // function getElement(attr,val)
+      // {
+      //     let ele=document.querySelector(`[${attr}=${val}]`);
+      //     console.log(ele);
+      // }
+      // getElement("data-test","abc");
+        //This is generic code of sir
+        function getElement(attribute)
+        {
+          let allElements=document.querySelectorAll("*");
+          let required=[];
+          for(let i=0;i<allElements.length;i++)
+          {
+            if(allElements[i].getAttribute(attribute)!=null)
+            {
+                required.push(allElements[i]);
+            }
+          }
+          return required;
+        }
+        let arr=getElement("data-test");
+        for(let i=0;i<arr.length;i++)
+        {
+          console.log(arr[i]);
+        }
     </script>
   </body>
 </html>

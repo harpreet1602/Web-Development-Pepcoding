@@ -15,16 +15,16 @@
       <li><a href="#">Fifth item</a></li>
     </ul>
     <script>
-      // Q Write a single click event handler that helps to delete any list item 
-      //when clicked on it, attach that handler to above list
-      let liTags=document.querySelectorAll("li");
-      for(let i=0;i<liTags.length;i++)
-      {
-          liTags[i].addEventListener("click",function(e){
-            e.currentTarget.remove();
-          });
-      }
-    
+      // Q Write a single click event handler that helps to delete any list item when clicked on it, attach that handler to above list
+
+    //   Solution:
+
+    //   document
+    //     .querySelector("#listToDestroy")
+    //     .addEventListener("click", function (e) {
+    //       let elm = e.target.parentNode;
+    //       elm.parentNode.removeChild(elm);
+    //     });
     </script>
   </body>
 </html>

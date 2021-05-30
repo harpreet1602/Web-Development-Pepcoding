@@ -12,8 +12,23 @@
     </div>
 
     <script>
-      //    Q Create a button that is destroyed by clicking on it but two new buttons are created in it's place.
-
+      //    Q Create a button that is destroyed by clicking on it but two new buttons 
+      //are created in it's place.
+      let btn=document.querySelector(".double");
+      let holder=document.querySelector("#doubleHolder");
+      btn.addEventListener("click",oneButton);
+      function oneButton(e)
+      {
+        let btn1=document.createElement("button");
+        btn1.addEventListener("click",oneButton);
+        btn1.innerText="double";
+        let btn2=document.createElement("button");
+        btn2.addEventListener("click",oneButton);
+        btn2.innerText="double";
+        holder.append(btn1);
+        holder.append(btn2);
+        e.currentTarget.remove();
+     } 
      
     </script>
   </body>
