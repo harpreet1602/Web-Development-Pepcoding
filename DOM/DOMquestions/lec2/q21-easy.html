@@ -22,8 +22,16 @@
     </p>
     <script>
       //   Q Write a script which on selecting text highlights it
+      document.addEventListener("mouseup",function(){
+      let selection=window.getSelection().getRangeAt(0); // selected text range
+      let selectedText = selection.extractContents(); //value not a string
+      console.log(selectedText);
+      let span = document.createElement("span");  //create a span
+      span.style.backgroundColor="yellow"; //background color yellow
+      span.appendChild(selectedText); //insert text inside span
+      selection.insertNode(span);
+    });
 
-    
     </script>
   </body>
 </html>

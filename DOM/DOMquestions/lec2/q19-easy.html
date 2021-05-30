@@ -43,7 +43,19 @@
       //entering another card (say B). Destroy the card A by making its border dashed and
       // in its place make another card with solid border which is not card A (say card C) 
       //and it should be dashed before.
-
+      let div=document.querySelectorAll("div");
+      for(let i=0;i<div.length;i++)
+      {
+          div[i].addEventListener("mouseenter",function(e){
+            for(let j=0;j<div.length;j++)
+            {
+            if(!div[j].classList.contains("solid"))
+            div[j].classList.add("solid");
+            }
+            console.log(e.relatedTarget);
+            e.relatedTarget.classList.remove("solid");
+          });
+      }
     
     </script>
   </body>
