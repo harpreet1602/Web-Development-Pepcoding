@@ -91,19 +91,19 @@ addBtn.addEventListener("click", function () {
       ticketWritingArea.addEventListener("input", ticketWritingAreaHandler);
 
       ticket.addEventListener("click", function (e) {
-        let id = e.currentTarget
-          .querySelector(".ticket-id")
-          .innerText.split("#")[1];
-
-        let tasksArr = JSON.parse(localStorage.getItem("tasks"));
-
-        tasksArr = tasksArr.filter(function (el) {
-          return el.id != id;
-        });
-
-        localStorage.setItem("tasks", JSON.stringify(tasksArr));
-
         if (deleteState) {
+          let id = e.currentTarget
+            .querySelector(".ticket-id")
+            .innerText.split("#")[1];
+
+          let tasksArr = JSON.parse(localStorage.getItem("tasks"));
+
+          tasksArr = tasksArr.filter(function (el) {
+            return el.id != id;
+          });
+
+          localStorage.setItem("tasks", JSON.stringify(tasksArr));
+
           e.currentTarget.remove();
         }
       });
@@ -178,5 +178,47 @@ function ticketWritingAreaHandler(e) {
 }
 
 function loadTasks() {
-  let tasksArr = JSON.parse(localStorage.getItem("tasks"));
+  let tasks = JSON.parse(localStorage.getItem("tasks"));
+  for (let i = 0; i < tasks.length; i++) {
+    let id = tasks[i].id;
+    let color = tasks[i].color;
+    let taskValue = tasks[i].task;
+
+    let ticket = document.createElement("div");
+    ticket.classList.add("ticket");
+    ticket.innerHTML = `<div class="ticket-color ${color}"></div>
+          <div class="ticket-id">#${id}</div>
+          <div class="ticket-box" contenteditable>
+            ${taskValue}
+          </div>
+          </div>`;
+
+    let ticketWritingArea = ticket.querySelector(".ticket-box");
+    ticketWritingArea.addEventListener("input", ticketWritingAreaHandler);
+
+    let ticketColorDiv = ticket.querySelector(".ticket-color");
+    ticketColorDiv.addEventListener("click", ticketColorHandler);
+
+    ticket.addEventListener("click", function (e) {
+      if (deleteState) {
+        let id = e.currentTarget
+          .querySelector(".ticket-id")
+          .innerText.split("#")[1];
+
+        let tasksArr = JSON.parse(localStorage.getItem("tasks"));
+
+        tasksArr = tasksArr.filter(function (el) {
+          return el.id != id;
+        });
+
+        localStorage.setItem("tasks", JSON.stringify(tasksArr));
+
+        e.currentTarget.remove();
+      }
+    });
+
+    grid.appendChild(ticket);
+  }
 }
+
+loadTasks();

@@ -52,26 +52,32 @@ addButton.addEventListener("click", function () {
             let color = selectedModalFilter.classList[1];
             let ticket = document.createElement("div");
             ticket.classList.add("ticket");
-            let id=short();
+            let id = short();
             //var uuid = Math.random().toString(36).slice(-6);
             ticket.innerHTML = `<div class="ticket-color ${color}"></div>
         <div class="ticket-id">#${id}</div>
         <div class="ticket-box" contenteditable>
         ${task}
         </div>`;
-        saveTicketInLocalStorage(id,color,task);
+            saveTicketInLocalStorage(id, color, task);
             grid.appendChild(ticket);
             modal.remove();
             modalVisible = false;
             ticket.addEventListener("click", function (e) {
                 if (delState) {
+                    let id = e.currentTarget.parentElement.querySelector(".ticket-id").innerText.split("#")[1];
+                    let taskArr = JSON.parse(localStorage.getItem("tasks"));
+                    taskArr = taskArr.filter(function (el) {
+                        return el.id != id;
+                    });
+                    localStorage.setItem("tasks", JSON.stringify(taskArr));
                     e.currentTarget.remove();
                 }
             });
             let ticketcol = ticket.querySelector(".ticket-color");
             ticketcol.addEventListener("click", ticketcolHandler);
-            let ticketWritingArea=ticket.querySelector(".ticket-box");
-            ticketWritingArea.addEventListener("input",ticketWritingAreaHandler);
+            let ticketWritingArea = ticket.querySelector(".ticket-box");
+            ticketWritingArea.addEventListener("input", ticketWritingAreaHandler);
         }
     });
     body.appendChild(modal);
@@ -105,22 +111,20 @@ for (let i = 0; i < allFilters.length; i++) {
         grid.style.backgroundColor = colors[color];
     });
 }
-function saveTicketInLocalStorage(id,color,task){
-    let requiredObj= { id, color, task};
-    let taskArr=JSON.parse(localStorage.getItem("tasks"));
+function saveTicketInLocalStorage(id, color, task) {
+    let requiredObj = { id, color, task };
+    let taskArr = JSON.parse(localStorage.getItem("tasks"));
     taskArr.push(requiredObj);
-    localStorage.setItem("tasks",JSON.stringify(taskArr));
+    localStorage.setItem("tasks", JSON.stringify(taskArr));
 }
 
 function ticketcolHandler(e) {
-    let id=e.currentTarget.parentElement.querySelector(".ticket-id").innerText.split("#")[1];
-    let reqind=-1;
-    let taskArr=JSON.parse(localStorage.getItem("tasks"));
-    for(let i=0;i<taskArr.length;i++)
-    {
-        if(taskArr[i].id==id)
-        {
-            reqind=i;
+    let id = e.currentTarget.parentElement.querySelector(".ticket-id").innerText.split("#")[1];
+    let reqind = -1;
+    let taskArr = JSON.parse(localStorage.getItem("tasks"));
+    for (let i = 0; i < taskArr.length; i++) {
+        if (taskArr[i].id == id) {
+            reqind = i;
             break;
         }
     }
@@ -131,27 +135,59 @@ function ticketcolHandler(e) {
     console.log(ind);
     e.currentTarget.classList.remove(currcol);
     e.currentTarget.classList.add(colorClasses[ind]);
-    taskArr[reqind].color=colorClasses[ind];
-    localStorage.setItem("tasks",JSON.stringify(taskArr));
+    taskArr[reqind].color = colorClasses[ind];
+    localStorage.setItem("tasks", JSON.stringify(taskArr));
 }
 
-function ticketWritingAreaHandler(e){
-    let id=e.currentTarget.parentElement.querySelector(".ticket-id").innerText.split("#")[1];
-    let reqind=-1;
-    let taskArr=JSON.parse(localStorage.getItem("tasks"));
-    for(let i=0;i<taskArr.length;i++)
-    {
-        if(taskArr[i].id==id)
-        {
-            reqind=i;
+function ticketWritingAreaHandler(e) {
+    let id = e.currentTarget.parentElement.querySelector(".ticket-id").innerText.split("#")[1];
+    let reqind = -1;
+    let taskArr = JSON.parse(localStorage.getItem("tasks"));
+    for (let i = 0; i < taskArr.length; i++) {
+        if (taskArr[i].id == id) {
+            reqind = i;
             break;
         }
     }
-    taskArr[reqind].task=e.currentTarget.innerText;
-    localStorage.setItem("tasks",JSON.stringify(taskArr));
+    taskArr[reqind].task = e.currentTarget.innerText;
+    localStorage.setItem("tasks", JSON.stringify(taskArr));
 }
 
-function loadTasks()
-{
-    let tasksArr=JSON.parse(localStorage.getItem("tasks"));
+function loadTasks() {
+    let taskArr = JSON.parse(localStorage.getItem("tasks"));
+    for(let i=0;i<taskArr.length;i++)
+    {
+        let id=taskArr[i].id;
+        let color=taskArr[i].color;
+        let task=taskArr[i].task;
+        let ticket = document.createElement("div");
+        ticket.classList.add("ticket");
+        //var uuid = Math.random().toString(36).slice(-6);
+        ticket.innerHTML = `<div class="ticket-color ${color}"></div>
+    <div class="ticket-id">#${id}</div>
+    <div class="ticket-box" contenteditable>
+    ${task}
+       </div>`;
+     
+    let ticketcol = ticket.querySelector(".ticket-color");
+    ticketcol.addEventListener("click", ticketcolHandler);
+    let ticketWritingArea = ticket.querySelector(".ticket-box");
+    ticketWritingArea.addEventListener("input", ticketWritingAreaHandler);
+
+    ticket.addEventListener("click", function (e) {
+        if (delState) {
+            let id = e.currentTarget.parentElement.querySelector(".ticket-id").innerText.split("#")[1];
+            let taskArr = JSON.parse(localStorage.getItem("tasks"));
+            taskArr = taskArr.filter(function (el) {
+                return el.id != id;
+            });
+            localStorage.setItem("tasks", JSON.stringify(taskArr));
+            e.currentTarget.remove();
+        }
+    });
+    
+    grid.appendChild(ticket);
+    }
+ 
 }
+loadTasks();
