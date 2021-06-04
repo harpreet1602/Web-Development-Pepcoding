@@ -103,12 +103,26 @@ delbtn.addEventListener("click", function (e) {
         delbtn.classList.add("del-state");
     }
 });
-
 for (let i = 0; i < allFilters.length; i++) {
     allFilters[i].addEventListener("click", function (e) {
+        // grid.style.backgroundColor = colors[color];
+        if(e.currentTarget.parentElement.classList.contains("selected-filter"))
+        {
+            e.currentTarget.parentElement.classList.remove("selected-filter");
+            loadTasks();
+        }
+        else
+        {
+        e.currentTarget.parentElement.classList.add("selected-filter");
+        for(let j=0;j<allFilters.length;j++)
+        {
+            if(i!=j && allFilters[j].parentElement.classList.contains("selected-filter"))
+            allFilters[j].parentElement.classList.remove("selected-filter");
+        }
         let color = e.currentTarget.classList[0].split("-")[0];
         console.log(color);
-        grid.style.backgroundColor = colors[color];
+        loadTasks(color);
+        }
     });
 }
 function saveTicketInLocalStorage(id, color, task) {
@@ -153,13 +167,21 @@ function ticketWritingAreaHandler(e) {
     localStorage.setItem("tasks", JSON.stringify(taskArr));
 }
 
-function loadTasks() {
+function loadTasks(passedColor) {
+    let allTickets=document.querySelectorAll(".ticket");
+    for(let i=0;i<allTickets.length;i++)
+    { 
+        allTickets[i].remove();
+    }
     let taskArr = JSON.parse(localStorage.getItem("tasks"));
     for(let i=0;i<taskArr.length;i++)
     {
         let id=taskArr[i].id;
         let color=taskArr[i].color;
         let task=taskArr[i].task;
+        if(passedColor){
+            if(passedColor!=color) continue;
+        }
         let ticket = document.createElement("div");
         ticket.classList.add("ticket");
         //var uuid = Math.random().toString(36).slice(-6);
@@ -188,6 +210,6 @@ function loadTasks() {
     
     grid.appendChild(ticket);
     }
- 
 }
+//refresh / re open / selected a filter
 loadTasks();

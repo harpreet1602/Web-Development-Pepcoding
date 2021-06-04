@@ -43,9 +43,8 @@ body{
 .filter:hover,.add:hover,.delete:hover{
     background-color: #393939;
 }
-.del-state{
+.del-state,.selected-filter{
     background-color: #393939;
-
 }
 .filter div{
     height:50%;

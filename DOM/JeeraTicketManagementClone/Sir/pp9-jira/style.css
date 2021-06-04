@@ -35,12 +35,12 @@ body {
 }
 
 .filter-container {
-  width: 8rem;
+  width: 14rem;
   display: flex;
 }
 .action-container {
   display: flex;
-  width: 4rem;
+  width: 7rem;
 }
 
 .filter {
@@ -87,11 +87,11 @@ body {
 }
 
 .delete {
-  font-size: 1.3rem;
+  font-size: 2.8rem;
 }
 
 .add {
-  font-size: 1.4rem;
+  font-size: 3rem;
   padding-top: 0.1rem;
 }
 
@@ -100,8 +100,8 @@ body {
   background-color: #393939;
 }
 
-.delete-state {
-  background-color: #393939!important;
+.delete-state,.selected-filter {
+  background-color: #393939 !important;
 }
 
 .modal-container {
@@ -181,4 +181,51 @@ body {
 .active-modal-filter {
   border: 5px solid red;
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .ticket {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .filter-container {
+    width: 18rem;
+  }
+
+  .action-container {
+    width: 10rem;
+  }
+
+  .add {
+    font-size: 5rem;
+  }
+
+  .delete {
+    font-size: 4.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .filter-container,
+  .action-container {
+    height: 64%;
+    margin-left: 1.5rem;
+    margin-top: 2.2vh;
+  }
+
+  .modal-container {
+    height: 14rem;
+    width: 24rem;
+    top: calc((100vh - 14rem) / 2);
+    left: calc((100vw - 24rem) / 2);
+  }
+
+  .delete {
+    font-size: 2.8rem;
+  }
+
+  .add {
+    font-size: 3rem;
+  }
 }
