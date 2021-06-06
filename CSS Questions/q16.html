@@ -6,7 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  
+  <style>
+    *{
+      box-sizing:border-box;
+    }
+    body{
+      margin:0;
+    }
+    .box{
+      margin:auto;
+      margin-top: calc( ( 100vh - 20rem ) / 2 );
+      height:20rem;
+      width:20rem;
+      background-color:black;
+      display:flex;
+      /* justify-content:center; */
+      /* align-items:center; */ 
+    }
+    .leg1,.leg2{
+      height:80%;
+      width:10%;
+      background:red;
+      /* border:1px solid white; */
+    }
+    /* .leg1{
+      transform:rotate(45deg);
+    }
+    .leg2{
+      transform:rotate(-45deg);
+    } */
+    .leg1{
+      transform:rotate(45deg) translateX(120px) translateY(-100px);
+    }
+    .leg2{
+      transform:rotate(-45deg) translateX(60px) translateY(90px);
+    }
+  </style>
   </head>
   <body>
     <div class="box">

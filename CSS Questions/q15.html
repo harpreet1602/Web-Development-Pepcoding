@@ -13,9 +13,6 @@
       }
       body{
         margin:0;
-        /* display:flex;
-        justify-content:center;
-        align-items:center; */
       }
       /* .container{
         margin:auto;
@@ -30,14 +27,17 @@
         display:flex;
       } */
       .container{
+        margin-top: calc( ( 100vh - 25vh ) / 2 );
         height:25vh;
         width:100vw;
-        border:5px solid;
+        /* border:5px solid; */
         display:flex;
+        justify-content:center;
+        align-items:center;
       }
       .avatars{
-        height:100%;
-        width:25%;
+        height:5rem;
+        width:5rem;
         border:1px solid black;
         border-radius:50%;
         border:5px solid white;
@@ -47,6 +47,7 @@
     </style>
   </head>
   <body>
+    <!-- one more thing we can do is to make the position relative and left go to -2rem -4rem -6rem and -8rem  -->
       <div class="container">
       <div class="avatars" style="
       background-image: url('1.jpg');
