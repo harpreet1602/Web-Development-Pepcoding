@@ -1,52 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <video src="" controls autoplay></video>
+    <!-- jugaad kara hai abhi pichla code thik karna hai -->
+    <div class="video-container">
+        <video controls autoplay></video>
+    </div>
     <button id="start">Start</button>
     <button id="stop">Stop</button>
-    <script>
-        let video=document.querySelector("video");
-        let start=document.querySelector("#start")
-        let stop=document.querySelector("#stop");
-        let chunks=[];
-        start.addEventListener("click",function(){
-            //code likhna hai jise recording start ho
-            mediaRecorder.start();
-        });
-        stop.addEventListener("click",function(){
-            //code likhna hai jise recording band ho
-            mediaRecorder.stop();
-        });
-        navigator.mediaDevices
-        .getUserMedia({ video:true , audio:true})
-        .then(function(mediaStream){
-            // let options = { mimeType : "video/webm" };
-            mediaRecorder=new MediaRecorder(mediaStream);
-            
-            mediaRecorder.addEventListener("dataavailable",function(e){
-                chunks.push(e.data);
-            });
-            mediaRecorder.addEventListener("stop",function(e){
-                let blob=new Blob(chunks,{ type: "video/mp4" });
-                chunks = [];
-                let a=document.createElement("a");
-                let url=window.URL.createObjectURL(blob);
-                a.href=url;
-                a.download="video.mp4";
-                a.click();
-                a.remove();
-            });
-            video.srcObject=mediaStream;
-        })
-        .catch(function(err){
-            console.log(err);
-        });
-    </script>
+
+    <div class="filter-container">
+        <div class="filter" style="background-color:rgba(255, 0, 0, 0.24);"></div>
+        <div class="filter" style="background-color:rgba(255, 255, 0, 0.281);"></div>
+        <div class="filter" style="background-color:rgba(0, 128, 0, 0.438);"></div>
+        <div class="filter" style="background-color:rgba(0, 255, 255, 0.39);"></div>
+        <div class="filter" style="background-color:rgba(255, 228, 196, 0.452);"></div>
+        <div class="filter" style="background-color:rgba(255, 166, 0, 0.52)"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
