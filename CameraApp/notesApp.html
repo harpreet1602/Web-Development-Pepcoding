@@ -5,32 +5,183 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        body{
+            margin:0;
+        }
+        select{
+            display:block;
+            height: 2rem;
+            width: 10rem;
+            margin: auto;
+        }
+        #title{
+            display:block;
+            height:2rem;
+            width:25rem;
+            margin:auto;
+        }
+        #content{
+            display:block;
+            margin:auto;
+            
+            height:10rem;
+            width:30rem;
+        }
+        #submit{
+            display:block;
+            margin:auto;
+        }
+
+    </style>
 </head>
 <body>
-    <script>
-        let req = indexedDB.open("NotesDB",1);
+    <!-- Notes app => general notes, placement notes , college notes
+    Dropdown, 2 inputboxes - 1 for title of the note and 2nd for content , submit button 
+    Get dom ref in script , add an event listener on submit button, when clicked get title and content
+    and category from drop down if anything is missing give an error else save in indexedDB -->
+   
+    <select name="notes">
+        <option value="placementNotes">placementNotes</option>
+        <option value="generalNotes">generalNotes</option>
+        <option value="collegeNotes">collegeNotes</option>
+    </select> <br>
+   <input id="title" type="text" name="title" placeholder="Enter the title"/><br>
+   <input id="content" type="text" name="content" placeholder="Enter the content"/><br>
+   <input id="submit" type="submit"/><br>
+   <hr>
+
+   <button id="placement">View placementNotes</button>
+   <button id="college">View collegeNotes</button>
+   <button id="general">View generalNotes</button>
+   <script>
+       let db;
+       let select=document.querySelector("select");
+       let title=document.querySelector("#title");
+       let content=document.querySelector("#content");
+       let submitBtn=document.querySelector("#submit");
+       let placementBtn=document.querySelector("#placement");
+       
+       let collegeBtn=document.querySelector("#college");
+       let generalBtn=document.querySelector("#general");
+       
+       placementBtn.addEventListener("click",function(){
+            viewNotes("placementNotes");
+       });
+       
+       collegeBtn.addEventListener("click",function(){
+            viewNotes("placementNotes");
+       });
+
+       
+       placementBtn.addEventListener("click",function(){
+            viewNotes("placementNotes");
+       });
+       
+       
+       
+       
+       // console.log(select.value);
+       submitBtn.addEventListener("click",function(e){
+            if(content.value == "" || title.value == "")
+            {
+                alert("Please enter title and content")
+                return;
+            }
+            else{
+                let collectionName = select.value;
+                let obj={};
+                if(collectionName == "placementNotes"){
+                        obj.pId=Date.now(); //this function will generate the unique values everytime  
+                }
+                if(collectionName == "generalNotes"){
+                    obj.gId=Date.now(); //this function will generate the unique values everytime  
+                                       
+                }
+                if(collectionName == "collegeNotes"){
+                    obj.cId=Date.now(); //this function will generate the unique values everytime  
+                    
+                }
+                obj.title = title.value;
+                obj.content = content.value;
+
+                addNote(collectionName, obj);
+            }
+       }); 
+
+       //version 1 mai data dalne ke baad version 2 pai jaye to automatically data aajaega version 2 mai
+       //bas dubara create key path id vala nhi karna version 2 ki baari mai 
+       let req = indexedDB.open("NotesDB",1);
         //indexedDB.open("Name-of-Database", version-of-db);
-
+       //database open hota hai
+       //jab open hojata hai database
         req.addEventListener("success",function(){
-            let accessToNotesDB = req.result;
-            alert("db was opened successfully");
+            db = req.result;
+            // alert("db was opened successfully");
         });
-
+        //nya banega ya nya version aayega to chalega ye vala
+        //collection sirf upgradeneeded mai hi banti hai
         //upgrade event occurs in 2 cases
         //case 1: when we create a new db
         //case 2: when you try to open a database which already
         //existed with a incremented version
         req.addEventListener("upgradeneeded",function(){
-            let accessToNotesDB = req.result;
+          let accessToNotesDB = req.result; //database ka access dega
             //I can create object store
-            alert("db was updated/created successfully");
+            accessToNotesDB.createObjectStore("placementNotes", { keyPath : "pId"});
+            accessToNotesDB.createObjectStore("generalNotes", { keyPath: "gId"});
+            accessToNotesDB.createObjectStore("collegeNotes", { keyPath: "cId"});    
+            //teen object baana diye database pai
+            //object mai esse konsi key hai jo identify karvaegi
+            //keyPath works as an ID
+            // alert("db was updated/created successfully");
         });
 
-        
+        //downgraded version mai error aajaega        
         req.addEventListener("error",function(){
             alert("Error in creation");
         });
 
+
+        //to save new notes in collection
+        function addNote(collectionName,obj)
+        {
+            if(!db) return;
+            //transaction banani padti hai for doing something in database
+            let tx = db.transaction(collectionName,"readwrite");  // hume sirf add content karna hai to readwrite use karenge
+            //jis object sai transaction kar rhe hai uska object stroe dede
+            let reqObjectStore = tx.objectStore(collectionName);  //tx mai ek object aaya jo bataya ki hamara add tiyaar hai
+            //dene ke baad add kardo apna obj
+            reqObjectStore.add(obj);                     //iske object store mai aake add kardo object
+        }        
+        // to view the notes that will be displayed  on ui
+        function viewNotes(collectionName)
+        {
+            if(!db) return;
+            
+            let tx = db.transaction(collectionName, "readonly");
+            let reqObjectStore = tx.objectStore(collectionName);
+            //collection store ke top pai point karega initially
+            
+            let cursorReq = reqObjectStore.openCursor();
+            //ye cursor naam ki cheez open hogyi
+            //ab is cursor ka loop chalaenge taki sare displat kara sake 
+            cursorReq.addEventListener("success", function(){
+                //ye cursor open hogya hai
+                let cursor = cursorReq.result;
+                //cursor milta hai to next  object pai jao
+                if(cursor){
+                    console.log(cursor.value);  //jispe point kar rha hai cursor
+                    cursor.continue();  //pichli request hategi ,jis point pai point kar rha hai vha sai hat ke next object ko point kare
+                    //again success event chalega cursor chalta rahega and loop ban jaega and aakhir mai jakr cursor mai kuch nhi aaega
+                    //and loop khatam hojaega
+                }
+            });
+            // Task us create 3 buttons view placement notes, view college notes, view general notes.
+        }
         </script>
 </body>
 </html>
