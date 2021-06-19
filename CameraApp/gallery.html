@@ -5,9 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body{
+            margin:0;
+            display:flex;
+            flex-wrap: wrap;
+            padding: 16px;
+        }
+        .media-container{
+            height:20rem;
+            width:15rem;
+            border:2px solid;
+        }
+        .media{
+            height:80%;
+            width:100%;  
+            border:2px solid;
+        }
+        .download,.delete{
+            height:10%;
+            width:100%;
+            border:2px solid;
+        }
+        img,video{
+            height:100%;
+            width:100%;
+        }
+    </style>
 </head>
 <body>
-    <div id="gallery">Gallery</div>
+    <!-- <h1>Gallery</h1> -->
+    <!-- <div class="media-container">
+        <div class="media"></div>
+        <button class="download"></button>
+        <button class="delete"></button>
+
+    </div> -->
+
+
+
+
+
     <script src="dbScript.js"></script>
+    <script>
+        setTimeout(function(){          
+        viewMedia();
+        },100);
+    </script>
 </body>
 </html>

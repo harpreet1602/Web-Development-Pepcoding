@@ -8,7 +8,7 @@ let chunks=[];
 
 galleryBtn.addEventListener("click",function(){
     //localhost:5500/index.html => localhost:5500/gallery.html
-    localhost.assign("gallery.html");
+    location.assign("gallery.html");
     //localhost ke gallery.html file ko dikha browser pai
 });
 
