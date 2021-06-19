@@ -41,3 +41,11 @@ body{
     top:55vh;
     left:80vw;
 }
+
+#gallery{
+    position: fixed;
+    z-index: 3;
+    bottom: 50px;
+    right: 50px;
+    height: 3rem;
+}

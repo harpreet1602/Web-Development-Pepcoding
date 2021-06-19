@@ -162,20 +162,24 @@
         function viewNotes(collectionName)
         {
             if(!db) return;
-            
+            //only reading
             let tx = db.transaction(collectionName, "readonly");
             let reqObjectStore = tx.objectStore(collectionName);
             //collection store ke top pai point karega initially
             
             let cursorReq = reqObjectStore.openCursor();
+            //is collection pai cursor ko kholiye
             //ye cursor naam ki cheez open hogyi
             //ab is cursor ka loop chalaenge taki sare displat kara sake 
             cursorReq.addEventListener("success", function(){
                 //ye cursor open hogya hai
                 let cursor = cursorReq.result;
+                //cursor milega
                 //cursor milta hai to next  object pai jao
                 if(cursor){
                     console.log(cursor.value);  //jispe point kar rha hai cursor
+                    let li = document.createElement("li");
+                    li.innerHTML=`<div>${cursor.value.title}</div><div>`;
                     cursor.continue();  //pichli request hategi ,jis point pai point kar rha hai vha sai hat ke next object ko point kare
                     //again success event chalega cursor chalta rahega and loop ban jaega and aakhir mai jakr cursor mai kuch nhi aaega
                     //and loop khatam hojaega
