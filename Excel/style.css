@@ -51,21 +51,54 @@ color:white;
     height: 4%;
     width: 100%;
     background-color: rgb(56, 56, 93);
+    display:flex;
 }
-
+.formula-bar input{
+    height: 100%;
+    outline: none;
+    border: 1px solid #27ae60;
+}
+#selected-cell-formula{
+    width:20%;
+}
+#complete-formula{
+    width:80%;
+}
 
 
 .menu-options div{
     border:1px solid;
     height:100%;
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
 }
 
 .b-u-i,
-.alugnment,
+.alignment,
 .colors{
     width:20%;
 }
 
 .font-style{
     width:40%;
+}
+.grid{
+    height: 74%;
+    width: 100%;
+    border:1px solid;
+}
+.sheets-bar{
+    height:4%;
+    width:100;
+    border:1px solid;
+}
+.sheets-bar div{
+    height:100%;
+    border:1px solid;
+    width:20%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#27ae60;
 }
