@@ -43,7 +43,7 @@ color:white;
 }
 
 .menu-options{
-    height:8%;
+    height:6%;
     width:100%;
     display:flex;
 }
@@ -84,7 +84,7 @@ color:white;
     width:40%;
 }
 .grid{
-    height: 74%;
+    height: 76%;
     width: 100%;
     border:1px solid;
 }
