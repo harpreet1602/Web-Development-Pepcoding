@@ -87,6 +87,14 @@ color:white;
     height: 76%;
     width: 100%;
     border:1px solid;
+    background-color: yellow;
+    position: relative;
+    overflow: auto;
+    /* ab mast scroll hoa grid according to column-tags */
+    padding-left: 30px;
+    padding-top: 30px;
+
+
 }
 .sheets-bar{
     height:4%;
@@ -101,4 +109,66 @@ color:white;
     justify-content:center;
     align-items:center;
     color:#27ae60;
+}
+
+.blank-corner{
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    position: fixed;
+    top: 20vh;
+    z-index: 3;
+    border: 1px solid;
+}
+
+.column-tags{
+    display:flex;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    /* flex-shrink:0; */
+}
+
+.column-tag-cell{
+    height: 30px;
+    width: 80px;
+    background: white;
+    text-align: center;
+    border: 1px solid;
+    padding-top: 4px;
+}
+/* kuch nya daalo to neeche likho */
+/* ab yha parent grid ki position relative kari and uske basis pai
+column tags ko position absolute karke top sai 0 and left sai 30 px leke 
+bilkul red vale ke sath aagya */
+
+
+.row-numbers{
+    position: absolute;
+    top: 30px;
+}
+
+.row-number-cell
+{
+    height: 30px;
+    width: 30px;
+    border: 1px solid;
+    text-align: center;
+    background: white;
+    padding-top: 5px;
+}
+.row{
+    display:flex;
+}
+.cell{
+    width: 80px;
+    height: 30px;
+    background: white;
+    border: 1px solid ;
+    flex-shrink: 0;
+    outline: none;
+}
+
+.grid-selected-cell{
+    border: 2px solid #7a9deb;
 }
