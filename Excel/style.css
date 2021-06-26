@@ -1,6 +1,8 @@
-/*preset*/
+/*presets*/
 *{
     box-sizing:border-box;
+    
+    font-family: 'Raleway', sans-serif;
 }
 body{
     margin:0;
@@ -23,7 +25,7 @@ body{
 .menu-bar{
     height:5%;
     width:100%;
-    border:1px solid;
+    background-color: #16a085;
     display:flex; 
     /* vertically center */
 }
@@ -33,12 +35,13 @@ body{
     height:100%;
     width:8%;
     display:flex;
+    color: white;
     justify-content:center;
     align-items:center;
 }
 .menu-bar p:hover,.menu-bar-option-selected{
 background:#78e08f;
-color:white;
+color:black!important;
 }
 
 .menu-options{
@@ -66,7 +69,6 @@ color:white;
 
 
 .menu-options div{
-    border:1px solid;
     height:100%;
     display:flex;
     justify-content:space-evenly;
@@ -89,7 +91,7 @@ color:white;
     background-color: yellow;
     position: relative;
     overflow: auto;
-    /* ab mast scroll hoa grid according to column-tags */
+    /* ab mast scroll hoga grid according to column-tags */
     padding-left: 30px;
     padding-top: 30px;
 
@@ -113,12 +115,11 @@ color:white;
 .blank-corner{
     height: 30px;
     width: 30px;
-    background-color: red;
+    background-color: rgb(41, 39, 39);
     position: fixed;
-    top: 20vh;
-    left: 0;
+    top: 20.1vh;
+    left: 0.5px;
     z-index: 3;
-    border: 1px solid;
 }
 
 .column-tags{
@@ -132,9 +133,10 @@ color:white;
 .column-tag-cell{
     height: 30px;
     width: 80px;
-    background: white;
+    background: #16a085;
     text-align: center;
-    border: 1px solid;
+    border: 1px solid white;
+    color: white;
     padding-top: 4px;
 }
 /* kuch nya daalo to neeche likho */
@@ -153,9 +155,10 @@ bilkul red vale ke sath aagya */
 {
     height: 30px;
     width: 30px;
-    border: 1px solid;
+    border: 1px solid white;
     text-align: center;
-    background: white;
+    background: #16a085;
+    color: white;
     padding-top: 5px;
 }
 .row{
@@ -165,9 +168,10 @@ bilkul red vale ke sath aagya */
     width: 80px;
     height: 30px;
     background: white;
-    border: 1px solid ;
+    border: 1px solid #079992;
     flex-shrink: 0;
     outline: none;
+    overflow: auto;
 }
 
 .grid-selected-cell{
