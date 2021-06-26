@@ -8,7 +8,6 @@ body{
 .container{
     height:100vh;
     width:100vw;
-    border:1px solid red;
 
 }
 .title-bar{
@@ -117,6 +116,7 @@ color:white;
     background-color: red;
     position: fixed;
     top: 20vh;
+    left: 0;
     z-index: 3;
     border: 1px solid;
 }
@@ -146,6 +146,7 @@ bilkul red vale ke sath aagya */
 .row-numbers{
     position: absolute;
     top: 30px;
+    left: 0;
 }
 
 .row-number-cell
@@ -170,5 +171,5 @@ bilkul red vale ke sath aagya */
 }
 
 .grid-selected-cell{
-    border: 2px solid #7a9deb;
+    border: 3px solid #1c49ac;
 }

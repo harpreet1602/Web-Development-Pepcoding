@@ -11,7 +11,7 @@ let grid = document.querySelector(".grid");
 
 let oldCell=undefined;
 
-let formulaSelectCell = document.querySelector("select-cell");
+let formulaSelectCell = document.querySelector("#selected-cell-formula");
 //here I need to highlight the option selected and also remove the highlight on clicking it or any other
 // option in menu bar 
 
@@ -65,19 +65,22 @@ for(let i=0;i<26;i++)
 {
     let cell = document.createElement("div");
     cell.classList.add("cell");
-    cell.setAttribute("data-address",Sting.fromCharCode(i+65)+j);
+    cell.setAttribute("data-address",String.fromCharCode(i+65)+j);
 
     cell.addEventListener("click",function(e){
+        
+             //check kro koi old cell hai kya pehli se selected
         if(oldCell)
         {
+              // agr han to use deselect kro class remove krke
             oldCell.classList.remove("grid-selected-cell");
         }
         e.currentTarget.classList.add("grid-selected-cell");
 
         let cellAddress = e.currentTarget.getAttribute("data-address");
-        
+        formulaSelectCell.value = cellAddress;
 
-
+        oldCell = e.currentTarget;
     });
 
     cell.contentEditable=true;
