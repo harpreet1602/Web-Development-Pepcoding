@@ -116,3 +116,4 @@ grid.append(row);
 }
 
 console.log(dataObj);
+
