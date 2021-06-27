@@ -172,7 +172,7 @@ formulaInput.addEventListener("change", function(e){
 
     for(let k=0;k<oldUpstream.length;k++)
     {
-        removeFromUpstream(selectedCellAddress, oldUpstream[i]);   
+        removeFromUpstream(selectedCellAddress, oldUpstream[k]);   
     }
 
     dataObj[selectedCellAddress].upstream = elementsArray;
@@ -181,6 +181,8 @@ formulaInput.addEventListener("change", function(e){
     {
         addToDownstream(selectedCellAddress, elementsArray[j]);
     }
+
+    
 });
 
 function addToDownstream(toBeAdded, inWHichWeAreAdding){
