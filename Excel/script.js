@@ -15,7 +15,7 @@ let formulaSelectCell = document.querySelector("#selected-cell-formula");
 
 let dataObj = {};
 
-
+let formulaInput = document.querySelector("#complete-formula");
 //here I need to highlight the option selected and also remove the highlight on clicking it or any other
 // option in menu bar 
 
@@ -85,17 +85,19 @@ for(let i=0;i<26;i++)
 
     cell.addEventListener("click",function(e){
         
-             //check kro koi old cell hai kya pehli se selected
+     //check kro koi old cell hai kya pehli se selected
         if(oldCell)
         {
-              // agr han to use deselect kro class remove krke
+      // agr han to use deselect kro class remove krke
             oldCell.classList.remove("grid-selected-cell");
         }
+        //jis cell pr click kra use select kro class add krke
         e.currentTarget.classList.add("grid-selected-cell");
 
         let cellAddress = e.currentTarget.getAttribute("data-address");
         formulaSelectCell.value = cellAddress;
 
+      //and ab jo naya cell select hogya use save krdo old cell wali variable taki next time agr click ho kisi nye cell pr to ise deselect kr pai
         oldCell = e.currentTarget;
     });
 
@@ -103,7 +105,29 @@ for(let i=0;i<26;i++)
     cell.addEventListener("input",function(e){
         console.log(e.currentTarget.innerText);
         let address = e.currentTarget.getAttribute("data-address");
-        
+        dataObj[address].value = Nummber(e.currentTarget.innerText);
+
+        dataObj[address].formula = "";
+
+        //upstream clear karni hai
+
+        let currCellUpstream = dataObj[address].upstream;
+
+        for(let i = 0; i < currCellUpstream.length; i++)
+        {
+            removeFromUpstream(address, currCellUpstream[i]);
+        }
+
+        dataObj[address].upstream = [];
+
+        //downstream ke cells ko update karna hai
+
+        let currCellDownStream = dataObj[address].downstream;
+
+        for(let i = 0; i < currCellDownStream.length; i++)
+        {
+            updateDownStreamElements(currCellDownStream[i]);
+        }
     });
 
 
@@ -117,3 +141,111 @@ grid.append(row);
 
 console.log(dataObj);
 
+formulaInput.addEventListener("change", function(e){
+    let formula = e.currentTarget.value; 
+    //"2 * A1"
+
+    let selectedCellAddress = oldCell.getAttribute("data-address");
+
+    dataObj[selectedCellAddress].formula = formula;
+    let formulaArr = formula.split(" "); // ["2","*","A1"]
+
+    let elementsArray = [];
+
+    for(let i=0;i<formulaArr.length;i++)
+    {
+        if( 
+            formulaArr[i] != "+" &&
+            formulaArr[i] != "-" &&
+            formulaArr[i] != "*" &&
+            formulaArr[i] != "/" &&
+            isNaN(Number(formulaArr[i]))
+        ){
+            elementsArray.push(formulaArr[i]);
+        }
+    }
+
+    //Before setting new upstream
+    //clear old upstream
+
+    let oldUpstream = dataObj[selectedCellAddress].upstream;
+
+    for(let k=0;k<oldUpstream.length;k++)
+    {
+        
+    }
+
+});
+
+
+
+
+
+function removeFromUpstream(dependent, onWhichItIsDepending)
+{
+    let newDownstream = [];
+
+    let oldDownstream = dataObj[onWhichItIsDepending].downstream;
+
+    for(let i = 0; i<oldDownstream.length; i++)
+    {
+        if(oldDownstream[i] != dependent) newDownstream.push(oldDownstream[i]);
+    }
+
+    dataObj[onWhichItIsDepending].downstream = newDownstream;
+}
+
+function updateDownstreamElements(elementAddress)
+{
+  //1- jis element ko update kr rhe hai unki upstream elements ki current value leao
+  //unki upstream ke elements ka address use krke dataObj se unki value lao 
+  //unhe as key value pair store krdo valObj naam ke obj me
+    let valObj = {};
+
+    let currCellUpstream = dataObj[elementAddress].upstream;
+
+    for(let i = 0;i < currCellUpstream.length; i++)
+    {
+        let upstreamCellAddress = currCellUpstream[i];
+        let upstreamCellValue = dataObj[upstreamCellAddress].value;
+
+        valObj[upstreamCellAddress] = upstreamCellValue;
+    }
+
+    let currFormula = dataObj[elementAddress].formula;
+
+    let formulaArr = currFormula.split(" ");
+
+    for(let j=0;j<formulaArr.length;j++)
+    {
+        if(valObj[formulaArr[j]])
+        {
+            formulaArr[j] = valObj[formulaArr[j]];
+        }
+    }
+
+    currFormula = formulaArr.join(" ");
+
+    let newValue = eval(currFormula);
+
+    dataObj[elementAddress].value = newValue;
+
+    let cellOnUI = document.querySelector(`[data-address=${elementAddress}]`);
+    cellOnUI.innerText = newValue;
+
+    let currCellDownstream = dataObj[elementAddress].downstream;
+
+    if(currCellDownstream.length > 0)
+    {
+        for(let k=0; k<currCellDownstream.length;i++)
+        {
+            updateDownstreamElements(currCellDownstream[k]);
+        }
+    }
+
+
+
+
+
+
+}
