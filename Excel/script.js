@@ -105,7 +105,7 @@ for(let i=0;i<26;i++)
     cell.addEventListener("input",function(e){
         console.log(e.currentTarget.innerText);
         let address = e.currentTarget.getAttribute("data-address");
-        dataObj[address].value = Nummber(e.currentTarget.innerText);
+        dataObj[address].value = Number(e.currentTarget.innerText);
 
         dataObj[address].formula = "";
 
@@ -172,12 +172,23 @@ formulaInput.addEventListener("change", function(e){
 
     for(let k=0;k<oldUpstream.length;k++)
     {
-        
+        removeFromUpstream(selectedCellAddress, oldUpstream[i]);   
     }
 
+    dataObj[selectedCellAddress].upstream = elementsArray;
+
+    for(let j=0;j<elementsArray.length;j++)
+    {
+        addToDownstream(selectedCellAddress, elementsArray[j]);
+    }
 });
 
+function addToDownstream(toBeAdded, inWHichWeAreAdding){
+    //get downstream of the cell in which we have to add
+    let reqDownstream = dataObj[inWHichWeAreAdding].downstream;
 
+    reqDownstream.push(toBeAdded);
+}
 
 
 
@@ -243,9 +254,7 @@ function updateDownstreamElements(elementAddress)
         }
     }
 
-
-
-
-
-
 }
+
+
+
