@@ -55,7 +55,15 @@ file.addEventListener("click",function(e){
             value: "",
             formula: "",
             upstream: [],
-            downstream: []
+            downstream: [],
+            fontSize: 10,
+            fontFamily: "Arial",
+            fontWeight: "normal",
+            color: "black",
+            backgroundColor: "white",
+            underline: "none",
+            italics: "normal",
+            textAlign: "left"
         };
     });
     
@@ -128,7 +136,15 @@ for(let i=0;i<26;i++)
         value: "",
         formula: "",
         upstream: [],
-        downstream: []
+        downstream: [],
+        fontSize: 10,
+        fontFamily: "Arial",
+        fontWeight: "normal",
+        color: "black",
+        backgroundColor: "white",
+        underline: "none",
+        italics: "normal",
+        textAlign: "left"
     };
 
 
