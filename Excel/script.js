@@ -3,6 +3,8 @@ body.spellcheck = false;
 
 let menuBarPtags = document.querySelectorAll(".menu-bar p");
 
+let file = menuBarPtags[0];
+
 let columnTags=document.querySelector(".column-tags");
 
 let rowNumbers =  document.querySelector(".row-numbers");
@@ -18,6 +20,43 @@ let dataObj = {};
 let formulaInput = document.querySelector("#complete-formula");
 //here I need to highlight the option selected and also remove the highlight on clicking it or any other
 // option in menu bar 
+
+file.addEventListener("click",function(e){
+    if(e.currentTarget.classList.contains("menu-bar-option-selected"))
+    {
+        e.currentTarget.innerHTML=`File`;
+    }
+    else
+    //if(e.currentTarget.classList.length==0)
+    //ki koi class nhi hai to selected nhi hai to isme modal daaldo
+    {     
+    e.currentTarget.innerHTML=`File
+    <span class="modal-container">
+        <span>Clear</span>
+        <span>Open</span>
+        <span>Save</span>
+        </span>`;
+    }
+
+    let allFileOptions = e.currentTarget.querySelectorAll("span>span");
+console.log(allFileOptions);
+
+    //clear
+    allFileOptions[0].addEventListener("click",function(e){
+        console.log(1);
+    });
+    
+    //open
+    allFileOptions[1].addEventListener("click",function(e){
+        console.log(2);
+    });
+    
+    //save
+    allFileOptions[2].addEventListener("click",function(e){
+        console.log(3);
+    });
+    
+});
 
 for(let i=0;i<menuBarPtags.length;i++)
 {
