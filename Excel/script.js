@@ -36,14 +36,27 @@ file.addEventListener("click",function(e){
         <span>Open</span>
         <span>Save</span>
         </span>`;
-    }
+    
 
     let allFileOptions = e.currentTarget.querySelectorAll("span>span");
-console.log(allFileOptions);
+// console.log(allFileOptions);
 
     //clear
     allFileOptions[0].addEventListener("click",function(e){
-        console.log(1);
+        // console.log(1);
+        let allCells=document.querySelectorAll(".cell");
+        for(let i=0;i<allCells.length;i++)
+        {
+            allCells[i].innerText="";
+        }
+
+        let cellAddress = allCells[i].getAttribute("data-address");
+        dataObj[cellAddress]={
+            value: "",
+            formula: "",
+            upstream: [],
+            downstream: []
+        };
     });
     
     //open
@@ -55,7 +68,7 @@ console.log(allFileOptions);
     allFileOptions[2].addEventListener("click",function(e){
         console.log(3);
     });
-    
+}
 });
 
 for(let i=0;i<menuBarPtags.length;i++)
