@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="refraction">Example text 1</p>
+    <input type="text" class="input" placeholder="1"/>
+    
+    <!-- <input type="text" class="input" placeholder="2"/> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script>
+        //$ MAI WRAP KARNA PADTA HAI KOI BHI JQUERY KA FUNCTION LAGANE KE LIYE
+        //2ND INPUT TAG KO SELECT KARNE KE LIYE
+        // $($(".input")[1]).change(function(){
+        //     console.log("changed");
+        // });
+            //ISME TO SARE SELECT HOAJENGE AUR SAB MAI EVENT BHI LAHG JAEGA
+            //NO NEED TO RUN A LOOP LIKE IN JAVASCRIPT
+        // $(".input").change(function(e){
+        //     // console.log("changed");
+        //     console.log(e.currentTarget.value);  
+        // });
+        //WITH .ON YOU CAN USE EVENTS THAT DO NOT HAVE A FUNCTION DIRECTLY
+        //WITH THIS POINTER IT REFERS TO THE CURRENT ELEMENT ON WHICH EVENT IS FIRED
+
+            // $(".input").on("input",function(e){
+            //     // console.log(e.currentTarget.value);
+            //     $("p").text(e.currentTarget.value);
+            // });
+            
+            // $(".input").on("keypress",function(e){
+            //     // console.log(e.key);
+            //     if(e.key=="Enter")
+            //     {
+            //         alert(e.currentTarget.value);
+            //         e.currentTarget.value="";
+            //     }
+            // });
+
+
+            //SAME THING IN JAVASCRIPT
+            //SO NOT MUCH DIFFERENCE SO WHY TO USE JQUERY ONLY USE JAVASCRIPT
+                let input=document.querySelector("input");
+                let p=document.querySelector("p");
+                input.addEventListener("input",function(e){
+                    p.innerText=e.currentTarget.value;
+                });
+
+                input.addEventListener("keypress",function(e){
+                    if(e.key=="Enter")
+                    {
+                        alert(e.currentTarget.value);
+                        e.currentTarget.value="";
+                    }
+                });
+
+    </script>
+</body>
+</html>
