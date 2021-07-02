@@ -48,7 +48,6 @@ file.addEventListener("click",function(e){
         for(let i=0;i<allCells.length;i++)
         {
             allCells[i].innerText="";
-        }
 
         let cellAddress = allCells[i].getAttribute("data-address");
         dataObj[cellAddress]={
@@ -64,17 +63,53 @@ file.addEventListener("click",function(e){
             underline: "none",
             italics: "normal",
             textAlign: "left"
+        }
         };
     });
     
     //open
     allFileOptions[1].addEventListener("click",function(e){
-        console.log(2);
-    });
+        // console.log(2);
+        //1.fetch the dataObj from the localStorage
+        //2.update the current dataObj as taken from the localStorage
+        datObj = JSON.parse(localStorage.getItem("sheet"));
+
+        //3.show on ui the previously saved dataObj
+        for(let j=1;j<=100;j++)
+        {
+            for(let i=0;i<26;i++)
+            {
+                let cellAddress = String.fromCharCode(i+65) + j;
+                let cellOnUI = document.querySelector(`[data-address=${cellAddress}]`);
+                let cellObj = dataObj[cellAddress];
+                cellOnUI.innerText=cellObj.value;
+                // cellOnUI.style.fontSize = cellObj.style.fontSize;
+                // cellOnUI.style.fontFamily = cellObj.fontFamily;
+                // cellOnUI.style.fontWeight = cellObj.fontWeight;
+                // cellOnUI.style.color = cellObj.color;
+                // cellOnUI.style.backgroundColor = cellObj.backgroundColor;
+                // cellOnUI.style.underline = cellObj.underline;
+                // cellOnUI.style.italics = cellObj.italics;
+                // cellOnUI.style.textAlign= cellObj.textAlign;
+            }
+        }
+            // for (let j = 1; j <= 100; j++) {
+            //     for (let i = 0; i < 26; i++) {
+            //       let address = String.fromCharCode(i + 65) + j;
+            //       let cellObj = dataObj[address];
+            //       let cellOnUi = document.querySelector(`[data-address=${address}]`);
+            //       cellOnUi.innerText = cellObj.value;
+            //       cellOnUi.style.backgroundColor = cellObj.backgroundColor;
+            //       //same kaam css styling kelie kr sakta hu?
+            //     }
+            //   }
+    }
+    );
     
     //save
     allFileOptions[2].addEventListener("click",function(e){
-        console.log(3);
+        // console.log(3);
+        localStorage.setItem("sheet", JSON.stringify(dataObj));
     });
 }
 });
