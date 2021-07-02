@@ -72,8 +72,8 @@ file.addEventListener("click",function(e){
         // console.log(2);
         //1.fetch the dataObj from the localStorage
         //2.update the current dataObj as taken from the localStorage
-        datObj = JSON.parse(localStorage.getItem("sheet"));
-
+        dataObj = JSON.parse(localStorage.getItem("sheet"));
+        // console.log(dataObj);
         //3.show on ui the previously saved dataObj
         for(let j=1;j<=100;j++)
         {
@@ -82,29 +82,19 @@ file.addEventListener("click",function(e){
                 let cellAddress = String.fromCharCode(i+65) + j;
                 let cellOnUI = document.querySelector(`[data-address=${cellAddress}]`);
                 let cellObj = dataObj[cellAddress];
+                // console.log(cellAddress,cellOnUI,cellObj);
                 cellOnUI.innerText=cellObj.value;
                 // cellOnUI.style.fontSize = cellObj.style.fontSize;
-                // cellOnUI.style.fontFamily = cellObj.fontFamily;
-                // cellOnUI.style.fontWeight = cellObj.fontWeight;
-                // cellOnUI.style.color = cellObj.color;
-                // cellOnUI.style.backgroundColor = cellObj.backgroundColor;
-                // cellOnUI.style.underline = cellObj.underline;
-                // cellOnUI.style.italics = cellObj.italics;
-                // cellOnUI.style.textAlign= cellObj.textAlign;
+                cellOnUI.style.fontFamily = cellObj.fontFamily;
+                cellOnUI.style.fontWeight = cellObj.fontWeight;
+                cellOnUI.style.color = cellObj.color;
+                cellOnUI.style.backgroundColor = cellObj.backgroundColor;
+                cellOnUI.style.underline = cellObj.underline;
+                cellOnUI.style.italics = cellObj.italics;
+                cellOnUI.style.textAlign= cellObj.textAlign;
             }
         }
-            // for (let j = 1; j <= 100; j++) {
-            //     for (let i = 0; i < 26; i++) {
-            //       let address = String.fromCharCode(i + 65) + j;
-            //       let cellObj = dataObj[address];
-            //       let cellOnUi = document.querySelector(`[data-address=${address}]`);
-            //       cellOnUi.innerText = cellObj.value;
-            //       cellOnUi.style.backgroundColor = cellObj.backgroundColor;
-            //       //same kaam css styling kelie kr sakta hu?
-            //     }
-            //   }
-    }
-    );
+    });
     
     //save
     allFileOptions[2].addEventListener("click",function(e){
@@ -311,7 +301,7 @@ function removeFromUpstream(dependent, onWhichItIsDepending)
     dataObj[onWhichItIsDepending].downstream = newDownstream;
 }
 
-function updateDownstreamElements(elementAddress)
+function updateUpstreamElements(elementAddress)
 {
   //1- jis element ko update kr rhe hai unki upstream elements ki current value leao
   //unki upstream ke elements ka address use krke dataObj se unki value lao 
@@ -327,11 +317,12 @@ function updateDownstreamElements(elementAddress)
 
         valObj[upstreamCellAddress] = upstreamCellValue;
     }
-
+     //2- jis element ko update kr rhe hai uska formula leao
     let currFormula = dataObj[elementAddress].formula;
-
+  //formula ko space ke basis pr split maro
     let formulaArr = currFormula.split(" ");
-
+   //split marne ke baad jo array mili uspr loop kara and formula me jo variable h(cells) unko unki value se replace krdo using valObj
+  
     for(let j=0;j<formulaArr.length;j++)
     {
         if(valObj[formulaArr[j]])
@@ -339,23 +330,28 @@ function updateDownstreamElements(elementAddress)
             formulaArr[j] = valObj[formulaArr[j]];
         }
     }
-
+  
+  //3- Create krlo wapis formula from the array by joining it
     currFormula = formulaArr.join(" ");
-
+  //4- evaluate the new value using eval function
     let newValue = eval(currFormula);
 
+  //update the cell(jispr function call hua) in dataObj
     dataObj[elementAddress].value = newValue;
-
+  //5- Ui pr update krdo new value
     let cellOnUI = document.querySelector(`[data-address=${elementAddress}]`);
     cellOnUI.innerText = newValue;
 
+  //6- Downstream leke ao jis element ko update kra just abhi kuki uspr bhi kuch element depend kr sakte hai
+  //unko bhi update krna padega
     let currCellDownstream = dataObj[elementAddress].downstream;
-
+ //check kro ki downstream me elements hai kya agr han to un sab pr yehi function call krdo jise wo bhi update hojai with new value
+  
     if(currCellDownstream.length > 0)
     {
         for(let k=0; k<currCellDownstream.length;i++)
         {
-            updateDownstreamElements(currCellDownstream[k]);
+            updateUpstreamElements(currCellDownstream[k]);
         }
     }
 
