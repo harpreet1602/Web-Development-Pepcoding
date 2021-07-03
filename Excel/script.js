@@ -174,7 +174,8 @@ for(let i=0;i<26;i++)
 
 
 
-
+//nye cell ko select and pichle ko deselect karne ka event
+//and jo cell selected hai use upar dikhane ka 
 
     cell.addEventListener("click",function(e){
         
