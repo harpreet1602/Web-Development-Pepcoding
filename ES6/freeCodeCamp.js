@@ -163,3 +163,125 @@ const myConcat = (arr1, arr2) => {
 
 
 console.log(myConcat([1, 2], [3, 4, 5]));
+
+
+let a = [1,2,3];
+
+//4
+//https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/functional-programming/use-the-filter-method-to-extract-data-from-an-array
+var filteredList = watchList.map(function(e){
+  return {"title":e.Title,"rating":e.imdbRating}
+}).filter(function(e){ return e.rating>=8.0});
+
+// Only change code above this line
+
+console.log(filteredList);
+
+
+//5
+//https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/functional-programming/use-higher-order-functions-map-filter-or-reduce-to-solve-a-complex-problem
+const squareList = arr => {
+  // Only change code below this line
+  arr=arr.filter(function(x){
+    return Number.isInteger(x) && x>0;
+  });
+  arr=arr.map(function(x){
+    return x*x;
+  });
+  return arr;
+  // Only change code above this line
+};
+
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+console.log(squaredIntegers);
+
+
+
+
+
+
+a.map(function(element,index,unknown){
+  console.log(element);
+  console.log(index);
+  console.log(unknown);
+});
+
+
+let obj = {
+  someArr : [3,7,12],
+  f: function () {
+    this.someArr.map(function(e){
+      console.log(2*e);
+    });
+  }
+}
+obj.f();
+
+
+//normal function (key word function; i can give it a name)
+function  f1(){
+  console.log("Hi");
+}
+f1();
+//arrow function (no keyword only symbols; i cannot give it name so I have to store it in a variable)
+let f2 = ()=>{
+  console.log("Hi");
+}
+
+f2();
+
+//----------------------
+
+function f3(){
+  return 2;
+}
+
+let f4 = () => 2;
+console.log(f4());
+//-------------------
+
+function f5(a,b){
+  return 2;
+}
+let f6 = (a,b) => 2;
+
+//-------------------
+
+function f7(a){
+  return 2;
+}
+
+let f8 = (a) => 2;
+
+//arrow function ka apna this nhi hai issliye immediate bahar vale ka lega
+
+let obj1 = {
+  someArr: [3,4,7],
+  f: function (){
+    let f2=()=>{
+      this.someArr.map(function(e){
+        console.log(2*e);
+      });
+    }
+    
+    f2();
+  }
+}
+obj1.f();
+
+
+let f9 = () => {
+  console.log(this);
+}
+f9();
+
+let f10 = function (){
+  let f11 = ()=>{
+    console.log(this);
+  }
+  f11();
+}
+f10();
+
+( () => { } )(); //IIFE
+(function(){})();

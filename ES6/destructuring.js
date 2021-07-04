@@ -29,12 +29,12 @@ console.log(x);
 let {y} = h;
 console.log(y);
 //sirf z define hua hai ki w ke andar z le aaye hai
-
+//w declare nhi horha z horha hai
 
 let {
      w: { z }, 
     } =h;
 console.log(z); 
-//2nd method
+//2nd method 
 // let {z} = h.w;
 // console.log(z);
