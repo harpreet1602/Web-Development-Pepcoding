@@ -43,17 +43,38 @@ console.log(p.slice(2));
 //Task 1.1
 let q = [4,8,7,9,12,13,16];
 let r=[];
-for(let i=0;i<q.length;i++)
-{
-    r.push(q[i]);
-}
-let k=3,i=r.length;
-while(i>=k)
-{
-    r[i+1]=r[i];
-    i--;
-}
-r[++i]=3;
-console.log(r);
+//my method
+// for(let i=0;i<q.length;i++)
+// {
+//     r.push(q[i]);
+// }
+// let k=3,i=r.length;
+// while(i>=k)
+// {
+//     r[i+1]=r[i];
+//     i--;
+// }
+// r[++i]=3;
+// console.log(r);
+
+
+//sir method 
+// for(let i=0;i<3;i++)
+// {
+//     r[i]=q[i];
+// }
+
+// r[3]=3;
+
+// for(let i=3;i<q.length;i++)
+// {
+//     r[i+1]=q[i];
+// }
+// console.log(r);
+
 
 // task1.2
+
+ r=[...q.slice(0,3),3,...q.slice(3)];
+console.log(r);
+
