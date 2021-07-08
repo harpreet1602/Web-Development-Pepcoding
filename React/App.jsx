@@ -21,13 +21,21 @@ class App extends React.Component{
         let tempArr = this.state.taskData;
         tempArr.push(value);
         this.setState({taskData:tempArr});
-    }
+    };
+
+    removeTask = (task) => {
+        let filteredArr = this.state.taskData.filter((e)=>{
+            return e!=task;
+        });
+        this.setState({ taskData: filteredArr});
+   
+    };
 
     render(){
     return (
         <div>
             <Input taskHandlerFunction = {this.taskHandler}/>
-            <List tasks = {this.state.taskData}/>    
+            <List removeTaskHandler={this.removeTask} tasks = {this.state.taskData}/>    
         </div>
     );
     }

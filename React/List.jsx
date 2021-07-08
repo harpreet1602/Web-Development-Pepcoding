@@ -1,9 +1,9 @@
 function List(props){    
     return(
-        <ul class="list">
+        <ul className="list">
             {
-            props.tasks.map((e)=>{
-                return <ListItem taskVal={e}/>;
+            props.tasks.map((e,index)=>{
+                return <ListItem removeTask={props.removeTaskHandler} key={index} taskVal={e}/>;
             })
             }
         </ul>
