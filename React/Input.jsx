@@ -11,7 +11,10 @@ class Input extends React.Component {
         return (
             <div>
                 <input type="text" value={this.state.task} onChange={(e) => { this.setState({ task: e.currentTarget.value }) }} />
-                <button onClick={() => { this.props.taskHandlerFunction(this.state.task); }}>Submit</button>
+                <button onClick={() => { 
+                    this.props.taskHandlerFunction(this.state.task);
+                    this.setState({task:""});
+                 }}>Submit</button>
             </div>
         );
     }
