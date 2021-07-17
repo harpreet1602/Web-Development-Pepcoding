@@ -13,11 +13,11 @@ class List extends React.Component {
         });
     }
     render() { 
-        this.state.allPets.filter((el)=>{
+      let arr=[];
+        arr =  this.state.allPets.filter((el)=>{
             if(this.props.petInfo[0])
             return this.props.petInfo[0].city == el.city && this.props.petInfo[0].animal == el.animal && this.props.petInfo[0].breed == el.breed;
               })
-            console.log(this.state.allPets);
 
         return (
             <div>
@@ -32,7 +32,7 @@ class List extends React.Component {
                     <tbody>
                         {
                                
-                                this.state.allPets.map((el) => {
+                                arr.map((el) => {
                                 return ( 
                                     <tr key={el.id}>
                                         <td>{el.name}</td>
