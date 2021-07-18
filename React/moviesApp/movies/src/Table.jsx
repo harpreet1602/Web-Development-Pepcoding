@@ -1,5 +1,4 @@
 import React from "react";
-
 class Table extends React.Component {
     state = {
         allMovies: [
@@ -39,22 +38,42 @@ class Table extends React.Component {
             this.setState({ allMovies: json });
         });
     }
-
     render() {
+        let moviesToDisplay = [];
+
+        if(this.props.currGenre != "All Genre")
+        {
+            moviesToDisplay = this.state.allMovies.filter((e)=>{
+                return e.genre.name == this.props.currGenre;
+            });
+        }
+        else
+        {
+            moviesToDisplay = this.state.allMovies;
+        }
+        console.log(moviesToDisplay);
+        
+        if(this.props.searchString)
+        {
+            let strToCompare = this.props.searchString.toLowerCase();
+
+            moviesToDisplay = moviesToDisplay.filter((el)=>{
+                return el.title.toLowerCase().includes(strToCompare);
+            });
+        }
+
+
         let numberOfPages = Math.ceil(this.state.allMovies.length / 5);
         let arr = [];
         for (let i = 1; i <= numberOfPages; i++) {
             arr.push(i);
         }
-
         let starting = (this.state.currPage - 1) * 5;
         let ending = this.state.currPage * 5 - 1;
 
-        let moviesToDisplay = this.state.allMovies.slice(
+         moviesToDisplay = moviesToDisplay.slice(
             starting, Math.min(ending,this.state.allMovies.length - 1) + 1
             );
-
-
 
         return (
             <div>
@@ -72,7 +91,6 @@ class Table extends React.Component {
                     <tbody>
                         {moviesToDisplay.map((el) => {
                             return (
-
                                 <tr key={el._id}>
                                     <td>{el.title}</td>
                                     <td>{el.genre.name}</td>
@@ -80,20 +98,18 @@ class Table extends React.Component {
                                     <td>{el.dailyRentalRate}</td>
                                     <td>Like</td>
                                     <td>
-                                        <button type="button" class="btn btn-primary">
+                                        <button type="button" class="btn btn-primary" 
+                                        onClick={()=>{
+                                            
+                                        }}>
                                             Delete
                                         </button>
                                     </td>
                                 </tr>
-
                             );
                         })}
-
-
-
                     </tbody>
                 </table>
-
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
                         <li class="page-item"
@@ -115,11 +131,8 @@ class Table extends React.Component {
                                     </li>
                             )
                             })
-                        
                         }
-                        
                         <li class="page-item"
-                        
                         onClick={()=>{
                             let currPage = this.state.currPage;
                             currPage++;
@@ -129,15 +142,8 @@ class Table extends React.Component {
                         ><a class="page-link" href="#">Next</a></li>
                     </ul>
                 </nav>
-
-
-
-
             </div>
-
         );
     }
-
 }
-
 export default Table;
