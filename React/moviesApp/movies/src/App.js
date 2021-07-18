@@ -7,7 +7,6 @@ import Category from "./Category";
 import Search from "./Search";
 import Table from "./Table";
 
-
 class App extends React.Component {
 state = {
   noOfMovies: 0,
@@ -28,9 +27,7 @@ receiveCurrGenre = (genre)=>{
     // </div>
 
     <React.Fragment>
-      <Navbar/>
-
-      <div className="row">
+    <div className="row">
         <div className="col-2 p-4">
           <Category 
           receiveCurrGenre = {this.receiveCurrGenre}
