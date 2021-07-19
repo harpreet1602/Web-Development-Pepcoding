@@ -190,13 +190,7 @@ function loadTasks(passedColor) {
     <div class="ticket-box" contenteditable>
     ${task}
        </div>`;
-     
-    let ticketcol = ticket.querySelector(".ticket-color");
-    ticketcol.addEventListener("click", ticketcolHandler);
-    let ticketWritingArea = ticket.querySelector(".ticket-box");
-    ticketWritingArea.addEventListener("input", ticketWritingAreaHandler);
-
-    ticket.addEventListener("click", function (e) {
+       ticket.addEventListener("click", function (e) {
         if (delState) {
             let id = e.currentTarget.parentElement.querySelector(".ticket-id").innerText.split("#")[1];
             let taskArr = JSON.parse(localStorage.getItem("tasks"));
@@ -207,6 +201,13 @@ function loadTasks(passedColor) {
             e.currentTarget.remove();
         }
     });
+     
+    let ticketcol = ticket.querySelector(".ticket-color");
+    ticketcol.addEventListener("click", ticketcolHandler);
+    let ticketWritingArea = ticket.querySelector(".ticket-box");
+    ticketWritingArea.addEventListener("input", ticketWritingAreaHandler);
+
+
     
     grid.appendChild(ticket);
     }

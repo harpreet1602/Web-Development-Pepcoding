@@ -23,8 +23,23 @@
       //     1- For desktop sizes make the background of above div red
       //     1- For tablet sizes make the background of above div blue
       //     1- For mobile sizes make the background of above div green
-
+      let div=document.querySelector("div");
+          window.addEventListener("resize",function(e){
+          if(window.innerWidth>1024)
+          {
+            div.style.background="red";
+          }
+          else if(window.innerWidth>600 && window.innerWidth<=1024)
+          {
+            div.style.background="blue";
+          }
+          else 
+          {
+            div.style.background="green";
+          }
+      });
      
+      
     </script>
   </body>
 </html>

@@ -18,8 +18,6 @@ class Category extends React.Component {
 
     render() {
         return (
-
-
             <ul className="list-group">
 
                 <li className="list-group-item" key="All Genre"
@@ -31,9 +29,7 @@ class Category extends React.Component {
                 </li>
 
 
-
-
-                {this.state.allGenre.map((el) => {
+            {this.state.allGenre.map((el) => {
                     return (
                         <li className="list-group-item" key={el._id}
                         onClick={()=>{
@@ -49,6 +45,4 @@ class Category extends React.Component {
     }
 
 }
-
-
 export default Category;

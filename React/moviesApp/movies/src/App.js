@@ -9,9 +9,12 @@ import Table from "./Table";
 
 class App extends React.Component {
 state = {
-  noOfMovies: 0,
+  moviesLength:0,
   searchString: "",
   currGenre: "All Genre",
+}
+receiveMoviesLength = (moviesLength)=>{
+  this.setState({moviesLength:moviesLength});
 }
 
 receiveCurrGenre = (genre)=>{
@@ -37,13 +40,15 @@ receiveCurrGenre = (genre)=>{
         <div className="col-10 p-4">
           <div className="row">
             <div className="col-3">
-              <Search receiveSearchParam = {this.receiveSearchParam}/>
+              <Search 
+              moviesLength = {this.state.moviesLength}
+              receiveSearchParam = {this.receiveSearchParam}/>
             </div>
           </div>
           <div className="row">
             <div className="col-8">
               <Table 
-
+              sendData = {this.receiveMoviesLength}
               searchString = {this.state.searchString}
               currGenre = {this.state.currGenre}
               />

@@ -51,7 +51,7 @@ class Table extends React.Component {
         {
             moviesToDisplay = this.state.allMovies;
         }
-        console.log(moviesToDisplay);
+        // console.log(moviesToDisplay);
         
         if(this.props.searchString)
         {
@@ -77,7 +77,7 @@ class Table extends React.Component {
 
         return (
             <div>
-                <table class="table table-striped">
+                <table className="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Title</th>
@@ -96,11 +96,37 @@ class Table extends React.Component {
                                     <td>{el.genre.name}</td>
                                     <td>{el.numberInStock}</td>
                                     <td>{el.dailyRentalRate}</td>
-                                    <td>Like</td>
+                                    <td onClick={()=>{
+                                        // console.log(e.currentTarget.innerText);
+                                        // e.currentTarget.innerText=="Liked"?e.currentTarget.innerText="Like":e.currentTarget.innerText="Liked";
+                                        let allMovies = this.state.allMovies;
+
+                                        let index = allMovies.findIndex((e)=>{
+                                            return e._id == el._id;
+                                        });
+
+                                        allMovies[index].liked?allMovies[index].liked=false:allMovies[index].liked=true;
+
+                                        this.setState({allMovies:allMovies});
+
+                                    }}>{(el.liked)?
+                                    <span className="material-icons">
+                                    favorite
+                                    </span>:
+                                    <span className="material-icons">
+                                    favorite_border
+                                    </span>}</td>
                                     <td>
-                                        <button type="button" class="btn btn-primary" 
+                                        <button type="button" className="btn btn-primary" 
                                         onClick={()=>{
+                                            let allMovies = this.state.allMovies;
                                             
+                                            allMovies = allMovies.filter((e)=>{
+                                                return e._id != el._id;
+                                            });
+
+                                            this.setState({allMovies:allMovies});
+                                            this.props.sendData(allMovies.length);
                                         }}>
                                             Delete
                                         </button>
@@ -111,35 +137,35 @@ class Table extends React.Component {
                     </tbody>
                 </table>
                 <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item"
+                    <ul className="pagination">
+                        <li className="page-item"
                         onClick={()=>{
                             let currPage = this.state.currPage;
                             currPage--;
                             if(currPage<1) currPage=1;
                             this.setState({currPage:currPage});
                         }}
-                        ><a class="page-link" href="#">Previous</a></li>
+                        ><a className="page-link" href="#">Previous</a></li>
                         {
                             arr.map((ele)=>{
                                 return (<li 
-                                class="page-item"
+                                className="page-item"
                                 onClick={()=>{
                                     this.setState({currPage:ele});
                                 }}>
-                                    <a class="page-link" href="#">{ele}</a>
+                                    <a className="page-link" href="#">{ele}</a>
                                     </li>
                             )
                             })
                         }
-                        <li class="page-item"
+                        <li className="page-item"
                         onClick={()=>{
                             let currPage = this.state.currPage;
                             currPage++;
                             if(currPage>numberOfPages) currPage=numberOfPages;
                             this.setState({currPage:currPage});
                         }}
-                        ><a class="page-link" href="#">Next</a></li>
+                        ><a className="page-link" href="#">Next</a></li>
                     </ul>
                 </nav>
             </div>
