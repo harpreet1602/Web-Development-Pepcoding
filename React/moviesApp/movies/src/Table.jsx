@@ -36,6 +36,7 @@ class Table extends React.Component {
             return res.json();
         }).then((json) => {
             this.setState({ allMovies: json });
+            this.props.sendData(json.length);
         });
     }
     render() {

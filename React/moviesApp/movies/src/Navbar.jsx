@@ -1,9 +1,10 @@
 import {Link} from "react-router-dom";
 import React from "react";
+let navItems = document.querySelectorAll(".nav-link");
+  console.log(navItems);
+  
 function Navbar() {
   // Dom manipulation for highlighting part , we should do it by hooks actually but for now use dom
-  let navItems = document.querySelectorAll(".nav-link");
-  console.log(navItems);
   for(let  i = 0 ; i <navItems.length; i++)
   {
     navItems[i].addEventListener("click",function(e){
