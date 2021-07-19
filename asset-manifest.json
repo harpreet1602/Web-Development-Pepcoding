@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.js": "/moviesApp/static/js/main.00753d1d.chunk.js",
-    "main.js.map": "/moviesApp/static/js/main.00753d1d.chunk.js.map",
-    "runtime-main.js": "/moviesApp/static/js/runtime-main.1594719f.js",
-    "runtime-main.js.map": "/moviesApp/static/js/runtime-main.1594719f.js.map",
-    "static/js/2.cc71bd63.chunk.js": "/moviesApp/static/js/2.cc71bd63.chunk.js",
-    "static/js/2.cc71bd63.chunk.js.map": "/moviesApp/static/js/2.cc71bd63.chunk.js.map",
-    "index.html": "/moviesApp/index.html",
-    "static/js/2.cc71bd63.chunk.js.LICENSE.txt": "/moviesApp/static/js/2.cc71bd63.chunk.js.LICENSE.txt"
+    "main.js": "/Web-Development-Pepcoding/tree/master/React/moviesApp/movies/static/js/main.00753d1d.chunk.js",
+    "main.js.map": "/Web-Development-Pepcoding/tree/master/React/moviesApp/movies/static/js/main.00753d1d.chunk.js.map",
+    "runtime-main.js": "/Web-Development-Pepcoding/tree/master/React/moviesApp/movies/static/js/runtime-main.01a04834.js",
+    "runtime-main.js.map": "/Web-Development-Pepcoding/tree/master/React/moviesApp/movies/static/js/runtime-main.01a04834.js.map",
+    "static/js/2.cc71bd63.chunk.js": "/Web-Development-Pepcoding/tree/master/React/moviesApp/movies/static/js/2.cc71bd63.chunk.js",
+    "static/js/2.cc71bd63.chunk.js.map": "/Web-Development-Pepcoding/tree/master/React/moviesApp/movies/static/js/2.cc71bd63.chunk.js.map",
+    "index.html": "/Web-Development-Pepcoding/tree/master/React/moviesApp/movies/index.html",
+    "static/js/2.cc71bd63.chunk.js.LICENSE.txt": "/Web-Development-Pepcoding/tree/master/React/moviesApp/movies/static/js/2.cc71bd63.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.1594719f.js",
+    "static/js/runtime-main.01a04834.js",
     "static/js/2.cc71bd63.chunk.js",
     "static/js/main.00753d1d.chunk.js"
   ]
