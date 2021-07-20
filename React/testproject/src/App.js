@@ -9,6 +9,8 @@ class App extends React.Component{
 
   petsHandler = (obj)=>{
     let tempArr = this.state.pets;
+    if(tempArr.length!=0)
+    tempArr=[];
     tempArr.push(obj);
     this.setState({pets:tempArr});
   };

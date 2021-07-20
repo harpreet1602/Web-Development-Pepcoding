@@ -13,12 +13,21 @@ class List extends React.Component {
         });
     }
     render() { 
-      let arr=[];
-        arr =  this.state.allPets.filter((el)=>{
-            if(this.props.petInfo[0])
-            return this.props.petInfo[0].city == el.city && this.props.petInfo[0].animal == el.animal && this.props.petInfo[0].breed == el.breed;
-              })
+       let arr=[];
+       console.log(this.props.petInfo);
+      
 
+        arr =  this.state.allPets.filter((el)=>{
+            // this.props.petInfo.map((e)=>{
+                // return e.city == el.city && e.animal == el.animal && e.breed == el.breed;
+            // })
+            for(let i=0;i<this.props.petInfo.length;i++)
+            return  el.city==this.props.petInfo[i].city && el.animal==this.props.petInfo[i].animal &&  el.breed==this.props.petInfo[i].breed;
+         
+           
+        })
+        console.log(arr);
+    
         return (
             <div>
                 <table class="table">

@@ -28,6 +28,7 @@ class SearchBox extends React.Component {
                     this.setState({ animal: e.currentTarget.value });
                   }} 
                   >
+                      <option value="select">select</option>
                     <option value="dog">dog</option>
                     <option value="rabbit">rabbit</option>
                     <option value="bird">bird</option>
@@ -43,6 +44,7 @@ class SearchBox extends React.Component {
                   }} 
                  >
                      {/*  onFocus="this.selectedIndex = -1;" */}
+                     <option value="select">select</option>
                     <option value="Havanese">Havanese</option>
                     <option value="Goldendoodle">Goldendoodle</option>
                     <option value="Boxer">Boxer</option>
