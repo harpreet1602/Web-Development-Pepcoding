@@ -1,0 +1,9 @@
+.msg{
+    color: white;
+    background-color:aqua;
+    text-align:center;
+    position: fixed;
+    top: 0;
+    left: 50vw;
+    transform: translateX(-50%);
+}

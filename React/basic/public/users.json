@@ -1,0 +1,32 @@
+[
+    {
+        "id" : 1,
+        "name" : "Harpreet Singh",
+        "age" : 19,
+        "email" : "harpreet@gmail.com"
+    },
+    {
+        "id" : 2,
+        "name" : "Jasmeet Singh",
+        "age" : 29,
+        "email" : "jasmeet@gmail.com"
+    },
+    {
+        "id" : 3,
+        "name" : "Jagmeet Singh",
+        "age" : 39,
+        "email" : "jagmeet@gmail.com"
+    },
+    {
+        "id" : 4,
+        "name" : "Charandeep Singh",
+        "age" : 49,
+        "email" : "charandeep@gmail.com"
+    },
+    {
+        "id" : 5,
+        "name" : "Navpreet Kaur",
+        "age" : 59,
+        "email" : "harpreet@gmail.com"
+    }
+]
